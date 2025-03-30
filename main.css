@@ -1259,7 +1259,8 @@
 
     a.carttrig{
         margin: 0;
-        background: var(--color-info-light  );
+        background: var(--color-info-light);
+        color: var(--color-black);
         border-radius: 50%;
         display: flex;
         align-items: center;
