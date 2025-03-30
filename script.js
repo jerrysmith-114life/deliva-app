@@ -150,35 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    let toggleElements = document.querySelectorAll(".toggleactivestatus");
-    let overlayElements = document.querySelectorAll(".overlaytoggle");
 
-    // Load states from localStorage
-    let savedStates = JSON.parse(localStorage.getItem("toggleStates")) || [];
-
-    toggleElements.forEach((toggle, index) => {
-        let currentState = savedStates[index] || "inactive"; // Default to inactive
-        toggle.setAttribute("data-state", currentState);
-
-        if (overlayElements[index]) {
-            overlayElements[index].style.display = currentState === "inactive" ? "block" : "none";
-        }
-
-        toggle.addEventListener("click", function () {
-            let isActive = this.getAttribute("data-state") === "active";
-            let newState = isActive ? "inactive" : "active";
-
-            this.setAttribute("data-state", newState);
-            savedStates[index] = newState;
-            localStorage.setItem("toggleStates", JSON.stringify(savedStates));
-
-            if (overlayElements[index]) {
-                overlayElements[index].style.display = newState === "inactive" ? "block" : "none";
-            }
-        });
-    });
-});
 
 
 
@@ -219,45 +191,27 @@ document.querySelector(".search-inputproducspropage").addEventListener("input", 
   });
 });
 
-// Check localStorage and apply the previous state
-if (localStorage.getItem('toggleState') === 'enabled') {
-    document.body.classList.add('compactpro');
-}
 
-// Select all toggle buttons and attach event listeners
-document.querySelectorAll('.toggle').forEach(button => {
-    button.addEventListener('click', function(event) {
-        event.preventDefault();
-        document.body.classList.toggle('compactpro');
-
-        // Save the state to localStorage
-        if (document.body.classList.contains('compactpro')) {
-            localStorage.setItem('toggleState', 'enabled');
-        } else {
-            localStorage.setItem('toggleState', 'disabled');
-        }
-    });
-});
 
 
 
   document.querySelectorAll('.receivestatus').forEach((receivestatus, index) => {
     const statusText = document.querySelectorAll('.status-text')[index]; // Match the corresponding status-text
-    const storageKey = `received_${index}`; // Unique key for each pair
+    const storageKey = `Accepted_${index}`; // Unique key for each pair
 
     // Load the saved state
     if (localStorage.getItem(storageKey) === 'true') {
-        statusText.textContent = "Received";
+        statusText.textContent = "Accepted";
         statusText.classList.add('received');
-        receivestatus.textContent = "Received";
+        receivestatus.textContent = "Accepted";
         receivestatus.classList.add('received');
     }
 
     // Click event
     receivestatus.addEventListener('click', function() {
-        statusText.textContent = "Received";
+        statusText.textContent = "Accepted";
         statusText.classList.add('received');
-        receivestatus.textContent = "Received";
+        receivestatus.textContent = "Accepted";
         receivestatus.classList.add('received');
 
         // Save the state
