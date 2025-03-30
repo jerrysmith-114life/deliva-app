@@ -625,6 +625,22 @@
         padding-left: 15px;
         border-radius: 8px;
         width: 100%;
+        font-size: 13px;
+    }
+    .useloc{
+        width: 100%;
+    }
+    .useloc a{
+        background: var(--color-black);
+        color: var(--color-plain-white);
+        width: 100%;
+        padding: 7px;
+        padding-left: 12px;
+        font-size: 15px;
+        display: flex;
+        border-radius: 8px;
+        box-sizing: border-box;
+
     }
 
     .right-sidebar {
@@ -1178,7 +1194,7 @@
         line-height: 10px;
     }
     .fooddessel p{
-        font-size: 3.5vw;
+        font-size: 14px;
         line-height: 15px;
         color: var(--color-dark);
     }
@@ -1243,7 +1259,7 @@
 
     a.carttrig{
         margin: 0;
-        background: var(--color-darkwhite);
+        background: var(--color-info-light  );
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -1396,7 +1412,7 @@
     .proodfoodheigh p{
         color: var(--color-info-dark);
         font-weight: 500;
-        font-size: 13px;
+        font-size: 14px;
     }
     .proodfoodheigh p:nth-child(3){
         font-family: "Tomorrow", serif;
@@ -1600,6 +1616,7 @@
         padding: 5%;
         box-sizing: border-box;
         overflow: scroll;
+        overflow-x: hidden;
       }
       .giftsfrm{
         margin: 5% 0;
@@ -1643,7 +1660,7 @@
       .giftfprm form input[type=tel]{
         font-family: "Tomorrow", serif;
         font-size: 13px;
-        padding: 16px 10px;
+        padding: 13px 10px;
 
       }
       .sungiftfrm{
@@ -1908,11 +1925,18 @@
         color: black;
       }
 
-      .prodcust{
-        display: flex;
-        font-weight: 100;
+      .prodcust {
+        display: flex ;
+        align-items: center;
         justify-content: center;
-      }
+        margin: 5% 0;
+        position: fixed;
+        width: 100%;
+        bottom: 10%;
+        left: 0;
+        padding: 0 6%;
+        box-sizing: border-box;
+    }
       
 
       .customisemeal{
@@ -1933,12 +1957,18 @@
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
       }
 
-      .cartorder{
+      .cartorder {
         display: flex;
         align-items: center;
         justify-content: center;
         margin: 5% 0;
-      }
+        position: fixed;
+        width: 100%;
+        bottom: 1%;
+        left: 0;
+        padding: 0 6%;
+        box-sizing: border-box;
+    }
       .cartorder a{
         background: var(--slate-green);
         color: var(--color-white);
@@ -2557,6 +2587,7 @@
     height: 81vh;
     overflow-y: scroll;
     position: absolute;
+    padding-bottom: 20%;
 }
 @media (max-height: 670px){
     .serchresutsfoods.prodpgedis{
