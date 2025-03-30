@@ -127,7 +127,7 @@
     }
     .introguest span{
         background: var(--color-danger);
-        padding: 0 1px;
+        padding: 0;
         display: flex;
         gap: 10px;
         border-radius: 25px;
