@@ -740,7 +740,7 @@
     @media (max-height: 670px){
  
         .maincontainstore{
-            height: 90vh;
+            height: 85vh;
             overflow-y: scroll;
         }
     }
