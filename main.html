@@ -33,6 +33,21 @@
             <p class="deladdy">Delivery address</p>
             <div class="delvadrss">
                 <div class="useloc"><a href="" class="close-btn" id="getLocation">Use current location</a></div>
+                <script>
+                    document.getElementById('getLocation').addEventListener('click', function(event) {
+                        event.preventDefault();
+            
+                        fetch("https://ipapi.co/json/")
+                        .then(response => response.json())
+                        .then(data => {
+                            document.getElementById('locationOutput').innerText = 
+                                `${data.city}, ${data.region}, ${data.country_name}`;
+                        })
+                        .catch(error => {
+                            document.getElementById('locationOutput').innerText = "Error fetching location.";
+                        });
+                    });
+                </script>
 
                 <div class="searchess"><div class="serch"><form action=""><input type="search" placeholder="Enter a new address"><button type="submit"><i class="fa-solid fa-right-long"></i></button  ></form></div></div>
             </div>
