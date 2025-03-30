@@ -405,6 +405,20 @@ orderHistoryContainer.addEventListener('click', () => {
 
 
 
+document.getElementById('getLocation').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    fetch("https://ipapi.co/json/")
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('locationOutput').innerText = 
+            `${data.city}, ${data.region}, ${data.country_name}`;
+    })
+    .catch(error => {
+        document.getElementById('locationOutput').innerText = "Error fetching location.";
+    });
+});
+
 
 
 
