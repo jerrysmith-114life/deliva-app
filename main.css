@@ -44,6 +44,7 @@
     --color-lightgreen2: #ADD8E6;
     --color-warning: #e86c18;
     --color-white: #fff;
+    --color-white2: #fff;
     --color-black: #000;
     --color-plain-white: #fff;
     --color-info-dark: #a0a0a0;
@@ -82,6 +83,7 @@
     --color-background: #181a1e;
     --color-darkgreen: #1E90FF;
     --color-white: #202528;
+    --color-white2: #000;
     --color-dark: #edeffd;
     --color-dark-variant: #a3bdcc;
     --color-light: rgba(0, 0, 0, 0.4);
@@ -102,7 +104,7 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-family: "Akaya Telivigala", serif;
             font-weight: bolder;
             font-size: 16px; /* Default font size */
             line-height: 1.5; /* Improve readability */
@@ -119,6 +121,7 @@
 
     .contain{
         padding: 7px;
+        height: 100vh;
     }
     .introguest{
         display: flex;
@@ -516,7 +519,7 @@
         overflow: hidden;
     }
     .maincontainstore{
-        height: 90vh;
+        height: 85vh;
         overflow-y: scroll;
     }
 
@@ -847,7 +850,7 @@
         margin: 5% 10%;
       }
       .serch{
-        background: var(--color-info-light2);
+        background: var(--color-white2);
         padding: 7px;
         border-radius: 30px;
         display: flex;
@@ -959,7 +962,7 @@
     }
     .foodstuffs{
         width: 100%;
-        height: 350px;
+        height: max-content;
         display: flex;
         overflow-x: scroll;
         overflow-y: hidden;
@@ -967,6 +970,7 @@
         scroll-behavior: smooth;
         gap: 0.5em;
         margin: 4% 0;
+        padding-bottom: 10%;
     }
     .fooditemss{
         min-width: 60%;
@@ -1094,7 +1098,7 @@
         flex-direction: column;
         width: 200px;
         height: 280px;
-        margin-top: 3em;
+        margin-top: 4em;
         border-radius: 12%;
         box-shadow: var(--box-shadow3);
         position: relative;
@@ -1307,6 +1311,12 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+    
+        
+    }
+    .slide-upgift .popdesfood{
+        padding: 10px;
+        padding-top: 3%;
     }
     .popdesfood i{
          font-size:20px;
@@ -1325,8 +1335,8 @@
     }
 
     .foodpopcir{
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
         border-radius: 50%;
         background: var(--color-info-light2);
         box-shadow: var(--box-shadow4);
@@ -1375,8 +1385,8 @@
     }
 
     .proodfoodheigh{
-        margin: 10% 0;
-        height: 40vh;
+        margin: 5% 0;
+        height: fit-content;
         overflow-y: scroll;
         font-weight: 100;
     }
@@ -1385,7 +1395,8 @@
     }
     .proodfoodheigh p{
         color: var(--color-info-dark);
-        font-weight: 100;
+        font-weight: 500;
+        font-size: 13px;
     }
     .proodfoodheigh p:nth-child(3){
         font-family: "Tomorrow", serif;
@@ -1632,6 +1643,7 @@
       .giftfprm form input[type=tel]{
         font-family: "Tomorrow", serif;
         font-size: 13px;
+        padding: 16px 10px;
 
       }
       .sungiftfrm{
@@ -1787,7 +1799,9 @@
         margin: 3% 0;
       }
       .sidecart{
-        height: 66vh;
+        height: 60vh;
+        padding-bottom: 10%;
+        box-sizing: border-box;
       }
       .toppsfoodsadd{
         display: grid;
@@ -1835,6 +1849,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+      }
+      .awaitorder .fdclosefd span{
+        font-size: 13px;
+
       }
       .topname{
         font-size: 13px;
@@ -1963,7 +1981,7 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        font-size: 4.5vw;
+        font-size: 14px;
         color: var(--color-dark);
         font-family: "Tomorrow", serif;
       }
@@ -2144,7 +2162,7 @@
             padding: 3%;
         }
         .sidecart{
-            height: 63vh;
+            height: 60vh;
         }
         .giftdisimm{
             width: 100%;
@@ -2160,10 +2178,10 @@
 
     @media (max-height: 610px){
         .sidecart{
-            height: 60vh;
+            height: 58vh;
           }
           .proodfoodheigh{
-            height: 38vh;
+            height: fit-content;
           }
           .crtshei{
             height: 60vh;
@@ -2208,6 +2226,7 @@
              box-sizing: border-box;
              margin-top: 5%;
              padding: 0 20px;
+             padding-bottom: 10%;
              box-sizing: border-box;
     }
     .sercfscnt > *:nth-child(odd) {
@@ -2512,7 +2531,7 @@
     color:  var(--color-dark);
     border-radius: 5px;
     text-decoration: none;
-    font-size: 3.5vw;
+    font-size: 11px;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -2521,18 +2540,20 @@
     color: var(--color-dark);
 }
 
-.serchresutsfoods.prodpgedis{
-    margin: 30% 0;
-    margin-top: 52%;
+.serchresutsfoods.prodpgedis {
+    margin-bottom: 1%;
+    margin-top: 40%;
     padding-top: 5%;
-    height: 75vh;
+    height: -webkit-fill-available;
     overflow-y: scroll;
     position: absolute;
-
+    padding-bottom: 10%;
+    top: 0;
 }
 .serchresutsfoods.prodpgedis.vend{
     margin: 30% 0;
     margin-top: 39%;
+    margin-bottom: 0;
     height: 81vh;
     overflow-y: scroll;
     position: absolute;
@@ -3355,7 +3376,7 @@ input:-internal-autofill-selected {
         align-items: center;
         gap: 5px;
         justify-content: center;
-        font-size: 17px;
+        font-size: 13px;
     }
   
 
@@ -3921,10 +3942,10 @@ input:-internal-autofill-selected {
 
 @media only screen and (min-width: 414px) and (max-height: 740px){
     .proodfoodheigh{
-        height: 33vh;
+        height: fit-content;
     }
     .sidecart {
-        height: 66vh;
+        height: 60vh;
     }
 }
 
@@ -4065,7 +4086,7 @@ input:-internal-autofill-selected {
         border-radius: 40px;
     }
     .sidecart {
-        height: 65vh;
+        height: 60vh;
     }
     .numamt {
         padding: 10px;
@@ -4214,7 +4235,7 @@ input:-internal-autofill-selected {
     }
     .proodfoodheigh{
         margin-bottom: 2%;
-        height: 38vh;
+        height: fit-content;
     }
     .proodfoodheigh h3, h4{
         font-size: 26px;
@@ -4488,7 +4509,7 @@ input:-internal-autofill-selected {
 
 }
   .proodfoodheigh{
-    height: 42vh;
+    height: fit-content;
   }
   .paynt a{
     height: 418px;
@@ -4595,13 +4616,11 @@ input:-internal-autofill-selected {
         padding: 10px;
         padding-left: 0;
     }
-    .serchresutsfoods .sercfscnt {
-        margin-top: -10%;
-    }
+    
 }
 @media (max-width: 360px)  and (max-height: 510px){
     .proodfoodheigh {
-        height: 32vh;
+        height: fit-content;
         margin-bottom: 3%;
     }
     .giftfprm {
@@ -4635,5 +4654,3 @@ input:-internal-autofill-selected {
 
 
 
-
-.venimg
