@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+</head>
+<style>
+     .hidden {
+      display: none;
+    }
+
+    #links-container {
+      display: flex;
+      gap: 1rem;
+      animation: fadeIn 1s forwards ;
+    }
+      #overlayspin {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    #overlayspin.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    #loading-spinner {
+      position: absolute;
+      border: 5px solid rgba(255, 255, 255, 0.2);
+      border-top: 5px solid white;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      z-index: 1100;
+      left:50%;
+      top: 50%;
+    }
+
+    @keyframes spin {
+      from {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      to {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      100% { opacity: 0; display: none; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+</style>
+<body class="bdystart intro-screen">
+    <div class="contain">
+        <div class="introguest"><a href="main.html" class="interactive-link"  data-sound="introsnd.mp3"><span><i class="fa-solid fa-user-tie"></i><p>Guest</p></span></a></div>
+
+        <section class="chef">
+            <video  autoplay loop muted>
+                <source src="video/chef.mp4" type="video/mp4">
+              </video>
+        </section> 
+    
+        <section class="twin"> </section>
+
+        <div class="start hidden" id="links-container"><a href="user-login-signup.html" class="interactive-link"  data-sound="introsnd.mp3">Get Started</a></div>
+    </div>
+    <div id="overlayspin">
+        <div id="loading-spinner"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const introScreen = document.getElementById("intro-screen");
+          const linksContainer = document.getElementById("links-container");
+          const links = document.querySelectorAll(".interactive-link");
+          const overlayspin = document.getElementById("overlayspin");
+    
+          // Play the intro sound
+          const introSound = new Audio("intro2.mp3");
+          introSound.play();
+    
+    
+          // Add click event to each link
+          links.forEach(link => {
+            const soundFile = link.dataset.sound;
+            const target = link.getAttribute("href");
+            link.addEventListener("click", function (e) {
+              e.preventDefault(); // Prevent immediate navigation
+    
+              // Show the overlayspin and spinner
+              overlayspin.classList.add("active");
+    
+              const sound = new Audio(soundFile);
+              sound.play();
+    
+              // Redirect after 1.5 seconds
+              setTimeout(() => {
+                window.location.href = target;
+              }, 2000);
+            });
+          });
+        });
+      </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splash Screen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .splash-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .splash {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #222;
+            transition: transform 1s ease, opacity 1s ease;
+            opacity: 0;
+        }
+
+        .splash img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        .visible {
+            opacity: 1;
+        }
+
+        .from-bottom {
+            transform: translateY(100%);
+        }
+
+        .from-top {
+            transform: translateY(-100%);
+        }
+
+        .from-left {
+            transform: translateX(-100%);
+        }
+
+        .to-center {
+            transform: translate(0, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="splash-container">
+        <div class="splash from-bottom" id="splash1">
+            <img src="https://via.placeholder.com/600x400/FF5733/FFFFFF?text=Image+1" alt="Image 1">
+        </div>
+        <div class="splash from-top" id="splash2">
+            <img src="https://via.placeholder.com/600x400/33FF57/FFFFFF?text=Image+2" alt="Image 2">
+        </div>
+        <div class="splash from-left" id="splash3">
+            <img src="https://via.placeholder.com/600x400/3357FF/FFFFFF?text=Image+3" alt="Image 3">
+        </div>
+    </div>
+
+    <script>
+        const splashes = [
+            { id: "splash1", delay: 1000 },
+            { id: "splash2", delay: 1000 },
+            { id: "splash3", delay: 1000 }
+        ];
+
+        let currentIndex = 0;
+
+        function showSplash(index) {
+            const splash = document.getElementById(splashes[index].id);
+            splash.classList.add("visible", "to-center");
+            setTimeout(() => {
+                splash.classList.remove("to-center");
+                splash.style.opacity = "0";
+                setTimeout(() => {
+                    splash.classList.remove("visible");
+                    currentIndex++;
+                    if (currentIndex < splashes.length) {
+                        showSplash(currentIndex);
+                    } else {
+                        window.location.href = "nextpage.html"; // Redirect to another page
+                    }
+                }, 1000);
+            }, splashes[index].delay);
+        }
+
+        // Start the splash sequence
+        window.addEventListener("load", () => showSplash(currentIndex));
+    </script>
+</body>
+</html>

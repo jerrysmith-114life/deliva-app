@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EZA</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="mainbdy srchhh">
+    <div class="contain sechfoodres">
+            <!----------------------------------------------------------TOP HEADER ------------------------------------------------------------- -->                        
+
+        <div class="vendserchdis">
+            <div class="barscart srchsfdd vendrrtop">
+                <a href="" onclick="window.history.back(); return false;" class="side-link left-link"><i class="fa-solid fa-backward fa-flip"></i></a>
+                <div class="searchess">
+                    <div class="venpoppg">
+                        <span>
+                            <div class="venpopimg">
+                                <img src="img/mega.png" alt="">
+                            </div>
+                            <div class="flrestdet ellipsisf">
+                                <p>Mega chicken</p>
+                                <div class="flexlike">
+                                    <p><i class="fa-solid fa-star fa-spin" style="color: #FFD43B;"></i>4.8 <p>2.4km</p></p>
+                                  
+                                    <div class="like-counter" style="display: none;" id="likeCounter">0 Likes</div>
+                                    <button class="like-button" id="likeButton">
+                                        <i class="far fa-heart" id="heartIcon"></i>
+                                    </button>
+                                  
+                                </div>
+                            </div>
+                        </span>
+                    </div
+                    ></div>
+                    <div><a href="" class="side-link right-link orderstopdis notamt"><div class="numamt"><small>5</small></div> <span class="icon material-icons"> shopping_cart</span></a></div>
+                </div>
+                <script>
+                    const likeButton = document.getElementById('likeButton');
+                    const likeCounter = document.getElementById('likeCounter');
+                    const heartIcon = document.getElementById('heartIcon');
+                    let likes = 0;
+                
+                    // Function to create a floating heart animation
+                    function createHeartAnimation() {
+                        const heart = document.createElement('div');
+                        heart.classList.add('heart');
+                        heart.innerHTML = '<i class="fas fa-heart"></i>'; // Solid heart icon
+                
+                        // Get button position
+                        const buttonRect = likeButton.getBoundingClientRect();
+                        heart.style.left = `${buttonRect.left + buttonRect.width / 2}px`;
+                        heart.style.top = `${buttonRect.top}px`;
+                
+                        document.body.appendChild(heart);
+                
+                        // Remove heart after animation
+                        setTimeout(() => {
+                            heart.remove();
+                        }, 1000);
+                    }
+                
+                    // Event listener for like button
+                    likeButton.addEventListener('click', () => {
+                        likes++;
+                        likeCounter.innerText = `${likes} Likes`;
+                
+                        // Toggle button and icon
+                        likeButton.classList.toggle('active');
+                        heartIcon.classList.toggle('far'); // Outline heart
+                        heartIcon.classList.toggle('fas'); // Solid heart
+                
+                        // Create floating heart animation
+                        createHeartAnimation();
+                    });
+                </script>
+
+            <!----------------------------------------------------------SEARCH BOX ------------------------------------------------------------- -->                        
+             <div class="searchess vedserfood"><div class="serch"><form action=""><input type="search" placeholder="Search"><button type="submit"><i class="fa-solid fa-magnifying-glass fa-spin"></i></button  ></form></div></div>
+            <!----------------------------------------------------------SEARCH BOX HERE ------------------------------------------------------------- -->                        
+
+        </div>
+            <!----------------------------------------------------------TOP HEADER ENDS HERS ------------------------------------------------------------- -->
+
+
+
+
+            <!----------------------------------------------------------SIDEBARS ------------------------------------------------------------- -->                        
+         <div class="sidebar left-sidebar" style="display: none;">
+            
+         </div>
+
+         <div class="sidebar right-sidebar">
+            <div class="rightsideflx"><button class="close-btn"><i class="fa-regular fa-circle-xmark fa-spin"></i></button><p>Swipe to delete <i class="fa-solid fa-trash fa-bounce"></i></p><span class="icon material-icons">shopping_cart</span></div>
+
+            <div class="topsheigh crtshei sidecart">
+
+                <div class="boxswipedel toppsfoodsadd">
+                    <div class="topsfodimgad"><div class="topsadfdd"><img src="img/foodim.webp" alt=""></div></div>
+                    <div class="portionfood">
+                        <div class="fdclosefd"><span class="ellipsise topname">Veggie Tomato Mix </span> <span class="topname">N 500</span></div>
+                        <div class="cart-indicator">
+                            <div class="progress-bar">
+                              <div class="progress"></div>
+                            </div>
+                            <div class="cart-info" id="cart-info">0/200 Items</div>
+                          </div>
+
+                          <div class="controls">
+                            <button id="add-item">Add Item</button>
+                            <button id="remove-item">Remove Item</button>
+                          </div>
+                    </div>
+                   </div>
+
+
+                   <div class="boxswipedel toppsfoodsadd">
+                    <div class="topsfodimgad"><div class="topsadfdd"><img src="img/foodim.webp" alt=""></div></div>
+                    <div class="portionfood">
+                        <div class="fdclosefd"><span class="ellipsise topname">Veggie Tomato Mix</span><span class="topname">N 500</span></div>
+                        <div class="cart-indicator">
+                            <div class="progress-bar">
+                              <div class="progress"></div>
+                            </div>
+                            <div class="cart-info" id="cart-info">0/10 Items</div>
+                          </div>
+
+                          <div class="controls">
+                            <button id="add-item">Add Item</button>
+                            <button id="remove-item">Remove Item</button>
+                          </div>
+                    </div>
+                   </div>
+
+                   <div class="boxswipedel toppsfoodsadd">
+                    <div class="topsfodimgad"><div class="topsadfdd"><img src="img/foodim.webp" alt=""></div></div>
+                    <div class="portionfood">
+                        <div class="fdclosefd"><span class="ellipsise topname">Veggie Tomato Mix</span> <span class="topname">N 500</span></div>
+                        <div class="cart-indicator">
+                            <div class="progress-bar">
+                              <div class="progress"></div>
+                            </div>
+                            <div class="cart-info" id="cart-info">0/10 Items</div>
+                          </div>
+
+                          <div class="controls">
+                            <button id="add-item">Add Item</button>
+                            <button id="remove-item">Remove Item</button>
+                          </div>
+                    </div>
+                   </div>
+
+                   <div class="boxswipedel toppsfoodsadd">
+                       <div class="topsfodimgad"><div class="topsadfdd"><img src="img/foodim.webp" alt=""></div></div>
+                       <div class="portionfood">
+                           <div class="fdclosefd"><span class="ellipsise topname">Veggie Tomato Mix</span> <span class="topname">N 500</span></div>
+                           <div class="cart-indicator">
+                               <div class="progress-bar">
+                                 <div class="progress"></div>
+                               </div>
+                               <div class="cart-info" id="cart-info">0/10 Items</div>
+                             </div>
+
+                             <div class="controls">
+                               <button id="add-item">Add Item</button>
+                               <button id="remove-item">Remove Item</button>
+                             </div>
+                       </div>
+                   </div>
+
+                   <div class="boxswipedel toppsfoodsadd">
+                   <div class="topsfodimgad"><div class="topsadfdd"><img src="img/foodim.webp" alt=""></div></div>
+                   <div class="portionfood">
+                       <div class="fdclosefd"><span class="ellipsise topname">Veggie Tomato Mix</span> <span class="topname">N 500</span></div>
+                       <div class="cart-indicator">
+                           <div class="progress-bar">
+                               <div class="progress"></div>
+                           </div>
+                           <div class="cart-info" id="cart-info">0/10 Items</div>
+                           </div>
+
+                           <div class="controls">
+                           <button id="add-item">Add Item</button>
+                           <button id="remove-item">Remove Item</button>
+                           </div>
+                   </div>
+
+
+                   </div>
+
+            </div>
+
+            <div class="toppnstot">
+                <div class="tottopfod"><p>Total</p> <p>N 9000</p></div>
+                <div class="tottopfod"><p>Balance</p> <p>N 50,000</p></div>
+                <div class="tottopfod"><button id="slideUpButtongift"><p><i class="fa-solid fa-gift fa-bounce"></i> Send as gift</p> <p><i class="fa-solid fa-arrow-right "></i></p></button></div>
+                <a href="" class="unique-link" data-popup="popup-1">Complete order</a>
+          </div>
+
+          <div class="unique-popup" id="popup-1">
+            <div class="popup-content">
+                <div class="clbal"><button class="closeseldtcrd-popup"><i class=" fa-regular fa-circle-xmark fa-spin"></i></button></div>
+                <div class="paynt">
+                    <div class="paycrd"><p>Pay online</p><a href="" class="unique-link" data-popup="popup-3"><img src="img/card (1).png" alt=""></a></div>
+                    <div class="paycrd"><div class="walcarddis"><p>Pay with Wallet</p> <p>N 50,000</p></div><a href="" class="unique-link" data-popup="popup-4"><img src="img/card (2).png" alt=""></a></div>
+                </div>
+            </div>
+          </div>
+
+          <div class="unique-popup" id="popup-3">
+            <div class="popup-content">
+                <div class="clbal"><button class="closeseldtcrd-popup"><i class=" fa-regular fa-circle-xmark fa-spin"></i></button><p>Online payment</p></div>
+                <div class="paynt">
+                    <div class="paycrd"><p>Delivery Order</p><a href=""><img src="img/ordertype (1).png" alt=""></a></div>
+                    <div class="paycrd"><div class="walcarddis"><p>In-restaurant order</p> </div><a href="" class="unique-link" data-popup="popup-9"><img src="img/ordertype (2).png" alt=""></a></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="unique-popup" id="popup-4">
+            <div class="popup-content">
+                <div class="clbal"><button class="closeseldtcrd-popup"><i class=" fa-regular fa-circle-xmark fa-spin"></i></button><p>Wallet payment</p></div>
+                <div class="paynt">
+                    <div class="paycrd"><p>Delivery Order</p><a href=""><img src="img/ordertype (1).png" alt=""></a></div>
+                    <div class="paycrd"><div class="walcarddis"><p>In-restaurant order</p> </div><a href="" class="unique-link" data-popup="popup-10"><img src="img/ordertype (2).png" alt=""></a></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="unique-popup" id="popup-9">
+            <div class="popup-content">
+                <div class="clbal"><button class="closeseldtcrd-popup"><i class=" fa-regular fa-circle-xmark fa-spin"></i></button><p>Online payment</p></div>
+                <div class="paynt">
+                    <div class="paycrd"><p>Eat-in</p><a href="" ><img src="img/eattype (1).png" alt=""></a></div>
+                    <div class="paycrd"><div class="walcarddis"><p>Take-out</p></div><a href="" ><img src="img/eattype (2).png" alt=""></a></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="unique-popup" id="popup-10">
+            <div class="popup-content">
+                <div class="clbal"><button class="closeseldtcrd-popup"><i class=" fa-regular fa-circle-xmark fa-spin"></i></button><p>Wallet payment</p></div>
+                <div class="paynt">
+                    <div class="paycrd"><p>Eat-in</p><a href="" ><img src="img/eattype (1).png" alt=""></a></div>
+                    <div class="paycrd"><div class="walcarddis"><p>Take-out</p></div><a href=""><img src="img/eattype (2).png" alt=""></a></div>
+                </div>
+            </div>
+        </div>
+        </div>
+            <!----------------------------------------------------------SIDEBAR ENDS HERE ------------------------------------------------------------- -->                        
+            <div class="slide-upgift" id="slideUpDivgift">
+                <div class="popdesfood"><i class="close-btncclsfoodgift  fa-regular fa-circle-xmark fa-spin"></i><i class="fa-solid fa-gift fa-bounce"></i></div>
+    
+                <div class="giftfprm">
+                    <form action="">
+                        <div class="giftsfrm">
+                            <label for="">Send this order to</label>
+                            <div class="ordto"><input type="text" name="" id="" placeholder="e.g john"></div>
+                        </div>
+                        
+                        <div class="giftsfrm">
+                            <label for="">from</label>
+                            <div class="ordto"><input type="text" name="" id="" placeholder="" value="Jeremiah"></div>
+                        </div>
+    
+                        <div class="flex-row">
+                            <div class="flag_code" >
+                              <img src="https://flagpedia.net/data/flags/h80/ng.png" alt="Country Flag" class="flag" id="selected-flag">
+                            <span id="selected-code" class="bracketed">+234</span>
+                            </div>
+                            <div class="numdiv">
+                                <label for="Recipient number"></label>
+                                <input type="tel" id="phone-number" name="phone-number" placeholder="123-456-7890" maxlength="10" required>
+                            </div>
+                  
+                            
+                            <!-- Dropdown with flags only -->
+                            <div class="dropdown" id="flag-dropdown">
+                              <!-- Sample Countries, add more below -->
+                              <div class="dropdown-item" data-country-code="+234" data-flag="https://flagpedia.net/data/flags/h80/ng.png">
+                                <img src="https://flagpedia.net/data/flags/h80/ng.png" alt="Nigeria Flag"> Nigeria
+                            </div>
+                            <div class="dropdown-item" data-country-code="+1" data-flag="https://flagpedia.net/data/flags/h80/us.png">
+                                <img src="https://flagpedia.net/data/flags/h80/us.png" alt="US Flag"> United States
+                            </div>
+                            <div class="dropdown-item" data-country-code="+44" data-flag="https://flagpedia.net/data/flags/h80/gb.png">
+                                <img src="https://flagpedia.net/data/flags/h80/gb.png" alt="UK Flag"> United Kingdom
+                            </div>
+                            <div class="dropdown-item" data-country-code="+91" data-flag="https://flagpedia.net/data/flags/h80/in.png">
+                                <img src="https://flagpedia.net/data/flags/h80/in.png" alt="India Flag"> India
+                            </div>
+                            <div class="dropdown-item" data-country-code="+61" data-flag="https://flagpedia.net/data/flags/h80/au.png">
+                                <img src="https://flagpedia.net/data/flags/h80/au.png" alt="Australia Flag"> Australia
+                            </div>
+                            <div class="dropdown-item" data-country-code="+33" data-flag="https://flagpedia.net/data/flags/h80/fr.png">
+                                <img src="https://flagpedia.net/data/flags/h80/fr.png" alt="France Flag"> France
+                            </div>
+                            <div class="dropdown-item" data-country-code="+81" data-flag="https://flagpedia.net/data/flags/h80/jp.png">
+                                <img src="https://flagpedia.net/data/flags/h80/jp.png" alt="Japan Flag"> Japan
+                            </div>
+                            <div class="dropdown-item" data-country-code="+55" data-flag="https://flagpedia.net/data/flags/h80/br.png">
+                                <img src="https://flagpedia.net/data/flags/h80/br.png" alt="Brazil Flag"> Brazil
+                            </div>
+                            <div class="dropdown-item" data-country-code="+49" data-flag="https://flagpedia.net/data/flags/h80/de.png">
+                                <img src="https://flagpedia.net/data/flags/h80/de.png" alt="Germany Flag"> Germany
+                            </div>
+                            <div class="dropdown-item" data-country-code="+7" data-flag="https://flagpedia.net/data/flags/h80/ru.png">
+                                <img src="https://flagpedia.net/data/flags/h80/ru.png" alt="Russia Flag"> Russia
+                            </div>
+                            <div class="dropdown-item" data-country-code="+34" data-flag="https://flagpedia.net/data/flags/h80/es.png">
+                                <img src="https://flagpedia.net/data/flags/h80/es.png" alt="Spain Flag"> Spain
+                            </div>
+                            <div class="dropdown-item" data-country-code="+86" data-flag="https://flagpedia.net/data/flags/h80/cn.png">
+                                <img src="https://flagpedia.net/data/flags/h80/cn.png" alt="China Flag"> China
+                            </div>
+                            <div class="dropdown-item" data-country-code="+39" data-flag="https://flagpedia.net/data/flags/h80/it.png">
+                                <img src="https://flagpedia.net/data/flags/h80/it.png" alt="Italy Flag"> Italy
+                            </div>
+                            <div class="dropdown-item" data-country-code="+41" data-flag="https://flagpedia.net/data/flags/h80/ch.png">
+                                <img src="https://flagpedia.net/data/flags/h80/ch.png" alt="Switzerland Flag"> Switzerland
+                            </div>
+                            <div class="dropdown-item" data-country-code="+27" data-flag="https://flagpedia.net/data/flags/h80/za.png">
+                                <img src="https://flagpedia.net/data/flags/h80/za.png" alt="South Africa Flag"> South Africa
+                            </div>
+                            <div class="dropdown-item" data-country-code="+20" data-flag="https://flagpedia.net/data/flags/h80/eg.png">
+                                <img src="https://flagpedia.net/data/flags/h80/eg.png" alt="Egypt Flag"> Egypt
+                            </div>
+                            <div class="dropdown-item" data-country-code="+251" data-flag="https://flagpedia.net/data/flags/h80/et.png">
+                                <img src="https://flagpedia.net/data/flags/h80/et.png" alt="Ethiopia Flag"> Ethiopia
+                            </div>
+                            <div class="dropdown-item" data-country-code="+254" data-flag="https://flagpedia.net/data/flags/h80/ke.png">
+                                <img src="https://flagpedia.net/data/flags/h80/ke.png" alt="Kenya Flag"> Kenya
+                            </div>
+                            <div class="dropdown-item" data-country-code="+223" data-flag="https://flagpedia.net/data/flags/h80/ml.png">
+                                <img src="https://flagpedia.net/data/flags/h80/ml.png" alt="Mali Flag"> Mali
+                            </div>
+                            <div class="dropdown-item" data-country-code="+260" data-flag="https://flagpedia.net/data/flags/h80/zm.png">
+                                <img src="https://flagpedia.net/data/flags/h80/zm.png" alt="Zambia Flag"> Zambia
+                            </div>
+                            <div class="dropdown-item" data-country-code="+263" data-flag="https://flagpedia.net/data/flags/h80/zw.png">
+                                <img src="https://flagpedia.net/data/flags/h80/zw.png" alt="Zimbabwe Flag"> Zimbabwe
+                            </div>
+                            <div class="dropdown-item" data-country-code="+256" data-flag="https://flagpedia.net/data/flags/h80/ug.png">
+                                <img src="https://flagpedia.net/data/flags/h80/ug.png" alt="Uganda Flag"> Uganda
+                            </div>
+                            <div class="dropdown-item" data-country-code="+225" data-flag="https://flagpedia.net/data/flags/h80/ci.png">
+                                <img src="https://flagpedia.net/data/flags/h80/ci.png" alt="Côte d'Ivoire Flag"> Côte d'Ivoire
+                            </div>
+                            
+                            </div>
+                        </div>
+    
+                        <div class="giftsfrm">
+                            <label for="">location</label>
+                            <div class="ordto"><input type="text" name="" id="" placeholder="Recipient's location "></div>
+                        </div> 
+    
+                        <div class="giftsfrm">
+                            <label for="email">Email (optional)</label>
+                            <div class="ordto"><input type="email" name="" id="" placeholder="e.g john@gmail.com"></div>
+                        </div>
+    
+                        <div class="giftsfrm">
+                            <label for="">Message (optional)</label>
+                            <div class="ordto"><input type="text" name="" id="" placeholder="Enter a message"></div>
+                        </div>
+    
+                       <div class="sungiftfrm"> <button type="submit">Confirm gifting details</button></div>
+                    </form>
+                    
+                </div>
+               
+    
+               
+            </div>
+        
+         <div class="overlay"></div>
+            <!----------------------------------------------------------VENDOR FOODS ------------------------------------------------------------- -->                        
+
+         <div class="serchresutsfoods prodpgedis vend">
+
+            <div class="sercfscnt">
+                <div class="fooditemss serchfoodspg">
+                    <a href=""class="trigger" data-target="popupitemsfod1">
+                        <div class="foodasel">
+                            <div class="foodimgdes"></div>
+                            <div class="fooddessel"><p class="ellipsise">Veggie tomato mix </p><br><span class="pricsfood">N1,900</span></div>
+                            <div class="venddisp"><div class="venimg"><img src="img/mega.png" alt=""></div><p class="ellipsise">Chicken Republic</p></div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="fooditemss serchfoodspg">
+                    <a href=""class="trigger" data-target="popupitemsfod1">
+                        <div class="foodasel">
+                            <div class="foodimgdes"><img src="img/foodim.webp" alt=""></div>
+                            <div class="fooddessel"><p class="ellipsise">Veggie tomato mix </p><br><span class="pricsfood">N1,900</span></div>
+                            <div class="venddisp"><div class="venimg"><img src="img/mega.png" alt=""></div><p class="ellipsise">Chicken Republic</p></div>
+                        </div>
+                    </a>
+                </div>
+
+                <div id="popupitemsfod1" class="popupitemsfod">
+                    <div class="popupitemsfod-content">
+                        <div class="popdesfood"><i class="close1 fa-regular fa-circle-xmark fa-spin"></i><a href="#"class=" carttrig" ><span class="icon material-icons">shopping_cart</span></a></div>
+                        <div class="prodimgpop">
+                            <div class="foodpopcir"><img src="img/foodim.webp" alt=""></div>
+                        </div>
+                        <div class="proodfoodheigh">
+                            <div class="proddespopfood">
+                                <h3>Veggie Tomato Mix</h3>
+                                <div class="venpoppg"><a href=""><div class="venpopimg"><img src="img/mega.png" alt=""></div><p>Chicken Republic</p></a></div>
+                                <p><i class="fa-solid fa-star fa-spin" style="color: #FFD43B;"></i>  4.8</p>
+                                <p>A vibrant and wholesome veggie tomato mix, featuring juicy tomatoes, sautéed bell peppers,
+                                     onions, and zucchini, simmered in a light garlic-herb sauce. Perfect as a side dish,
+                                      pasta topping, or a filling for wraps. Fresh, flavorful, and nutritious!</p>
+                                      
+                            </div>
+                        </div>
+                        <div class="prodcust">
+                            <button class="customisemeal" id="slideUpButton">Customise your meal ✨ ✏️</button>
+
+                            
+                        </div>
+                        <div class="cartorder">
+                            <a href="" class="unique-link" data-popup="popup-2"><span class="">Order now</span></a>
+                        </div>
+
+                        <div class="unique-popup" id="popup-2">
+                            <div class="popup-content">
+                                <div class="clbal"><button class="closeseldtcrd-popup"><i class=" fa-regular fa-circle-xmark fa-spin"></i></button></div>
+                                <div class="paynt">
+                                    <div class="paycrd"><p>Pay online</p><a href="" class="unique-link" data-popup="popup-5"><img src="img/card (1).png" alt=""></a></div>
+                                    <div class="paycrd"><div class="walcarddis"><p>Pay with Wallet</p> <p>N 50,000</p></div><a href="" class="unique-link" data-popup="popup-6"><img src="img/card (2).png" alt=""></a></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="unique-popup" id="popup-5">
+                            <div class="popup-content">
+                                <div class="clbal"><button class="closeseldtcrd-popup"><i class=" fa-regular fa-circle-xmark fa-spin"></i></button><p>Online payment</p></div>
+                                <div class="paynt">
+                                    <div class="paycrd"><p>Delivery Order</p><a href="" ><img src="img/ordertype (1).png" alt=""></a></div>
+                                    <div class="paycrd"><div class="walcarddis"><p>In-restaurant order</p> </div><a href="" class="unique-link" data-popup="popup-7"><img src="img/ordertype (2).png" alt=""></a></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="unique-popup" id="popup-6">
+                            <div class="popup-content">
+                                <div class="clbal"><button class="closeseldtcrd-popup"><i class=" fa-regular fa-circle-xmark fa-spin"></i></button><p>Wallet payment</p></div>
+                                <div class="paynt">
+                                    <div class="paycrd"><p>Delivery order</p><a href="" ><img src="img/ordertype (1).png" alt=""></a></div>
+                                    <div class="paycrd"><div class="walcarddis"><p>In-restaurant order</p></div><a href="" class="unique-link" data-popup="popup-8"><img src="img/ordertype (2).png" alt=""></a></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="unique-popup" id="popup-7">
+                            <div class="popup-content">
+                                <div class="clbal"><button class="closeseldtcrd-popup"><i class=" fa-regular fa-circle-xmark fa-spin"></i></button><p>Online payment</p></div>
+                                <div class="paynt">
+                                    <div class="paycrd"><p>Eat-in</p><a href="" ><img src="img/eattype (1).png" alt=""></a></div>
+                                    <div class="paycrd"><div class="walcarddis"><p>Take-out</p></div><a href=""><img src="img/eattype (2).png" alt=""></a></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="unique-popup" id="popup-8">
+                            <div class="popup-content">
+                                <div class="clbal"><button class="closeseldtcrd-popup"><i class=" fa-regular fa-circle-xmark fa-spin"></i></button><p>Wallet payment</p></div>
+                                <div class="paynt">
+                                    <div class="paycrd"><p>Eat-in</p><a href="" ><img src="img/eattype (1).png" alt=""></a></div>
+                                    <div class="paycrd"><div class="walcarddis"><p>Take-out</p></div><a href=""><img src="img/eattype (2).png" alt=""></a></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slide-up" id="slideUpDiv">
+                            <div class="popdesfood"><i class="close-btncclsfood  fa-regular fa-circle-xmark fa-spin"></i><span>Toppings</span></div>
+
+                           <div class="topsheigh">
+
+                            <div class="toppsfoodsadd">
+                                <div class="topsfodimgad"><div class="topsadfdd"><img src="img/toop.jpg" alt=""></div></div>
+                                <div class="portionfood">
+                                    <div class="fdclosefd"><span class="topname">Drinks</span> <span class="topname">N 500</span></div>
+                                    <div class="cart-indicator">
+                                        <div class="progress-bar">
+                                          <div class="progress"></div>
+                                        </div>
+                                        <div class="cart-info" id="cart-info">0/200 Items</div>
+                                      </div>
+
+                                      <div class="controls">
+                                        <button id="add-item">Add Item</button>
+                                        <button id="remove-item">Remove Item</button>
+                                      </div>
+                                </div>
+                               </div>
+
+                               <div class="toppsfoodsadd">
+                                <div class="topsfodimgad"><div class="topsadfdd"><img src="img/toop.jpg" alt=""></div></div>
+                                <div class="portionfood">
+                                    <div class="fdclosefd"><span class="topname">Drinks</span><span class="topname">N 500</span></div>
+                                    <div class="cart-indicator">
+                                        <div class="progress-bar">
+                                          <div class="progress"></div>
+                                        </div>
+                                        <div class="cart-info" id="cart-info">0/10 Items</div>
+                                      </div>
+
+                                      <div class="controls">
+                                        <button id="add-item">Add Item</button>
+                                        <button id="remove-item">Remove Item</button>
+                                      </div>
+                                </div>
+                               </div>
+
+                               <div class="toppsfoodsadd">
+                                <div class="topsfodimgad"><div class="topsadfdd"><img src="img/toop.jpg" alt=""></div></div>
+                                <div class="portionfood">
+                                    <div class="fdclosefd"><span class="topname">Drinks</span> <span class="topname">N 500</span></div>
+                                    <div class="cart-indicator">
+                                        <div class="progress-bar">
+                                          <div class="progress"></div>
+                                        </div>
+                                        <div class="cart-info" id="cart-info">0/10 Items</div>
+                                      </div>
+
+                                      <div class="controls">
+                                        <button id="add-item">Add Item</button>
+                                        <button id="remove-item">Remove Item</button>
+                                      </div>
+                                </div>
+                               </div>
+
+                               <div class="toppsfoodsadd">
+                                <div class="topsfodimgad"><div class="topsadfdd"><img src="img/toop.jpg" alt=""></div></div>
+                                <div class="portionfood">
+                                    <div class="fdclosefd"><span class="topname">Drinks</span> <span class="topname">N 500</span></div>
+                                    <div class="cart-indicator">
+                                        <div class="progress-bar">
+                                          <div class="progress"></div>
+                                        </div>
+                                        <div class="cart-info" id="cart-info">0/10 Items</div>
+                                      </div>
+
+                                      <div class="controls">
+                                        <button id="add-item">Add Item</button>
+                                        <button id="remove-item">Remove Item</button>
+                                      </div>
+                                </div>
+                               </div>
+
+                               <div class="toppsfoodsadd">
+                                <div class="topsfodimgad"><div class="topsadfdd"><img src="img/toop.jpg" alt=""></div></div>
+                                <div class="portionfood">
+                                    <div class="fdclosefd"><span class="topname">Drinks</span> <span class="topname">N 500</span></div>
+                                    <div class="cart-indicator">
+                                        <div class="progress-bar">
+                                          <div class="progress"></div>
+                                        </div>
+                                        <div class="cart-info" id="cart-info">0/10 Items</div>
+                                      </div>
+
+                                      <div class="controls">
+                                        <button id="add-item">Add Item</button>
+                                        <button id="remove-item">Remove Item</button>
+                                      </div>
+                                </div>
+                               </div>
+
+                               
+                           </div>
+
+                           <div class="toppnstot">
+                                 <div class="tottopfod"><p>Total</p> <p>N 3000</p></div>
+                                 <a href="">Save</a>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="sercfscnt">
+                <div class="fooditemss serchfoodspg">
+                    <a href=""class="trigger" data-target="popupitemsfod1">
+                        <div class="foodasel">
+                            <div class="foodimgdes"><img src="img/foodim.webp" alt=""></div>
+                            <div class="fooddessel"><p class="ellipsise">Veggie tomato mix </p><br><span class="pricsfood">N1,900</span></div>
+                            <div class="venddisp"><div class="venimg"><img src="img/mega.png" alt=""></div><p class="ellipsise">Chicken Republic</p></div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="fooditemss serchfoodspg">
+                    <a href=""class="trigger" data-target="popupitemsfod1">
+                        <div class="foodasel">
+                            <div class="foodimgdes"><img src="img/foodim.webp" alt=""></div>
+                            <div class="fooddessel"><p class="ellipsise">Veggie tomato mix </p><br><span class="pricsfood">N1,900</span></div>
+                            <div class="venddisp"><div class="venimg"><img src="img/mega.png" alt=""></div><p class="ellipsise">Chicken Republic</p></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="sercfscnt">
+                <div class="fooditemss serchfoodspg">
+                    <a href=""class="trigger" data-target="popupitemsfod1">
+                        <div class="foodasel">
+                            <div class="foodimgdes"><img src="img/foodim.webp" alt=""></div>
+                            <div class="fooddessel"><p class="ellipsise">Veggie tomato mix </p><br><span class="pricsfood">N1,900</span></div>
+                            <div class="venddisp"><div class="venimg"><img src="img/mega.png" alt=""></div><p class="ellipsise">Chicken Republic</p></div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="fooditemss serchfoodspg">
+                    <a href=""class="trigger" data-target="popupitemsfod1">
+                        <div class="foodasel">
+                            <div class="foodimgdes"><img src="img/foodim.webp" alt=""></div>
+                            <div class="fooddessel"><p class="ellipsise">Veggie tomato mix </p><br><span class="pricsfood">N1,900</span></div>
+                            <div class="venddisp"><div class="venimg"><img src="img/mega.png" alt=""></div><p class="ellipsise">Chicken Republic</p></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="sercfscnt">
+                <div class="fooditemss serchfoodspg">
+                    <a href=""class="trigger" data-target="popupitemsfod1">
+                        <div class="foodasel">
+                            <div class="foodimgdes"><img src="img/foodim.webp" alt=""></div>
+                            <div class="fooddessel"><p class="ellipsise">Veggie tomato mix </p><br><span class="pricsfood">N1,900</span></div>
+                            <div class="venddisp"><div class="venimg"><img src="img/mega.png" alt=""></div><p class="ellipsise">Chicken Republic</p></div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="fooditemss serchfoodspg">
+                    <a href=""class="trigger" data-target="popupitemsfod1">
+                        <div class="foodasel">
+                            <div class="foodimgdes"><img src="img/foodim.webp" alt=""></div>
+                            <div class="fooddessel"><p class="ellipsise">Veggie tomato mix </p><br><span class="pricsfood">N1,900</span></div>
+                            <div class="venddisp"><div class="venimg"><img src="img/mega.png" alt=""></div><p class="ellipsise">Chicken Republic</p></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!----------------------------------------------------------VENDOR FOODS ENDS HERE ------------------------------------------------------------- -->                        
+
+            <div class="overlayss"></div>
+
+         </div>
+
+    </div>
+
+<script src="main.js"></script>
+<script src="theme.js"></script>
+</body>
+</html>

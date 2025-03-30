@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EZA</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+       
+
+  
+    </style>
+</head>
+<body class="grybdy">
+   
+        <div class="naves">
+            <div class="chefhat"><img src="img/hatchef.png" alt=""></div>
+            <div class="swtchfrms">
+                <a href="#" class="tab active" data-target="boxes1">Login</a>
+                <a href="#" class="tab" data-target="boxes2">Sign-up</a>
+            </div>
+        </div>
+        <div class="containerses">
+
+            <!----------------------------------------------------------LOGIN FORM ------------------------------------------------------------- -->
+              
+            <div class="boxes boxes1 active">
+                <form action="" class="logsinfom">
+                    <div class="lgsnfm">
+                        <label for="email">Email</label>
+                        <input type="email" name="" id="">
+                    </div>
+                    <div class="lgsnfm">
+                        <label for="password">Password</label>
+                        <input type="password" class="password" name="" id="">
+                    </div>
+                    <div class="lgsnfm view"><a href="">Forgot Passcode</a><i  class="eye-icon"><span class="togglePassword material-icons">visibility</span></i></div>
+
+                    <div class="or"><span>or</span></div>
+                    <div class="contothers">
+                        <a href=""><img src="img/icon (1).jpg" alt=""></a>
+                        <a href=""><img src="img/icon (2).jpg" alt=""></a>
+                        <a href=""><img src="img/icon(3).jpg" alt=""></a>
+                    </div>
+                    <div class="sibbtn">
+                        <div class="subfrm vendorbtn"><a href="vendors-login-signup.html" >Vendor</a></div>
+                        <div class="subfrm"><button  type="submit">Login</button></div>
+                        <div class="subfrm vendorbtn"><a href="vendors-login-signup.html" >Rider</a></div>
+                    </div>
+                    
+
+                </form>
+            </div>
+
+            
+            <!----------------------------------------------------------SIGNUP FORM ------------------------------------------------------------- -->
+
+            <div class="boxes boxes2">
+                <form action="" class="logsinfom">
+                    <div class="lgsnfm">
+                        <div class="namesdivlabel"><label for="name">First Name</label> <label for="name">Last Name</label></div>
+                        <div class="namesdiv"><input type="text" name="" id=""><input type="text" name="" id=""></div>
+                    </div>
+                    <div class="lgsnfm">
+                        <label for="email">Email</label>
+                        <input type="email" name="" id="">
+                    </div>
+                    <div class="lgsnfm">
+                        <label for="password">Password</label>
+                        <input type="password" class="password" name="" id="">
+                    </div>
+                    <div class="lgsnfm view bas2hh"><i  class="eye-icon"><span class="togglePassword material-icons">visibility</span></i></div>
+
+
+                    <div class="or"><span>or</span></div>
+                    <div class="contothers">
+                        <a href=""><img src="img/icon (1).jpg" alt=""></a>
+                        <a href=""><img src="img/icon (2).jpg" alt=""></a>
+                        <a href=""><img src="img/icon(3).jpg" alt=""></a>
+                    </div>
+                    <div class="sibbtn">
+                        <div class="subfrm vendorbtn"><a href="vendors-login-signup.html" >Vendor</a></div>
+                        <div class="subfrm"><button  type="submit">Sign-up</button></div>
+                        <div class="subfrm vendorbtn"><a href="rider-login-signup.html" >Rider</a></div>
+                    </div>
+
+                </form>
+            </div>
+
+
+        </div>
+        <div id="overlayspin">
+            <div id="loading-spinner"></div>
+        </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+        ////////////////////////////////////// BOX TOGGLE  ///////////////////////////
+
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', event => {
+                event.preventDefault();
+                
+                // Remove active class from all tabs and boxeses
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.boxes').forEach(boxes => boxes.classList.remove('active'));
+                
+                // Add active class to the clicked tab
+                tab.classList.add('active');
+                
+                // Get the target boxes using the class from data-target and show it
+                const targetClass = tab.getAttribute('data-target');
+                document.querySelector(`.boxes.${targetClass}`).classList.add('active');
+            });
+        });
+
+       
+                ////////////////////////////////////// VIEW PASSWORD  ///////////////////////////
+
+
+        const togglePassword = document.querySelector('.togglePassword'); // Select by class
+        const password = document.querySelector('.password'); // Select by class
+
+        togglePassword.addEventListener('click', function () {
+            // Toggle the type attribute
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+
+            // Change the icon based on the input type
+            if (type === 'password') {
+                this.innerHTML = '<span class="material-icons">visibility</span>'; // Show eye icon
+            } else {
+                this.innerHTML = '<span class="material-icons">visibility_off</span>'; // Slashed eye icon
+            }
+        });
+  
+    </script>
+    <script src="theme.js"></script>
+</body>
+</html>

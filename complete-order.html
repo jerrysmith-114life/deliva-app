@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DELIVA</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body >
+    <div class="mainbody">
+        <div class="confmord">
+            <div class="confmod"><img src="img/confirm (1).png" alt=""></div>
+        </div>
+        <div class="revleave">
+            <h1>Order complete, thanks for your purchase </h1>
+            <p>Please rate the vendor</p>
+        </div>
+        <div class="ratestr">
+            <div class="rating">
+                <span class="star" data-value="1"><i class="fa-solid fa-star"></i></span>
+                <span class="star" data-value="2"><i class="fa-solid fa-star"></i></span>
+                <span class="star" data-value="3"><i class="fa-solid fa-star"></i></span>
+                <span class="star" data-value="4"><i class="fa-solid fa-star"></i></span>
+                <span class="star" data-value="5"><i class="fa-solid fa-star"></i></span>
+              </div>
+              <p style="display: none;" id="rating-value">Rating: 0</p>
+        </div>
+        <div class="continue">
+            <a href="">Continue</a>
+        </div>
+    </div>
+
+    <script>
+            const stars = document.querySelectorAll('.rating .star');
+    const ratingValue = document.getElementById('rating-value');
+
+    stars.forEach((star) => {
+      star.addEventListener('click', () => {
+        // Get the clicked star's value
+        const rating = star.getAttribute('data-value');
+
+        // Reset and highlight stars up to the clicked one
+        stars.forEach(s => {
+          s.classList.remove('active');
+          if (s.getAttribute('data-value') <= rating) {
+            s.classList.add('active');
+          }
+        });
+
+        // Update the displayed rating value
+        ratingValue.textContent = `Rating: ${rating}`;
+      });
+    });
+    </script>
+</body>
+</html>
