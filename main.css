@@ -2821,6 +2821,7 @@
 }
 .proimgcirdispl img{
     width: 100%;
+    max-height: 200px;
 }
 
 .proheidiscontdet{
@@ -4692,3 +4693,5 @@ input:-internal-autofill-selected {
 
 
 
+
+.profiledetail-container input
