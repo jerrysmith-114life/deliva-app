@@ -296,8 +296,54 @@
            
 
             <div class="profimgdispl">
-                <div class="proimgcirdispl"></div>
+                <div class="proimgcirdispl" id="profilePic"> <input type="file" id="fileInput" accept="image/*" style="display: none;"></div>
             </div>
+            <script>
+                const profileDiv = document.getElementById('profilePic');
+                const fileInput = document.getElementById('fileInput');
+                const placeholderText = document.getElementById('placeholderText');
+        
+                // Load saved image from localStorage
+                function loadSavedProfilePic() {
+                    const savedImage = localStorage.getItem('profilePic');
+                    if (savedImage) {
+                        const img = document.createElement('img');
+                        img.src = savedImage;
+                        img.style.display = 'block';
+                        profileDiv.innerHTML = ''; // Remove placeholder text
+                        profileDiv.appendChild(img);
+                    }
+                }
+        
+                profileDiv.addEventListener('click', () => {
+                    fileInput.click();
+                });
+        
+                fileInput.addEventListener('change', function(event) {
+                    const file = event.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            // Create an image element or replace existing one
+                            let img = profileDiv.querySelector('img');
+                            if (!img) {
+                                img = document.createElement('img');
+                                profileDiv.innerHTML = ''; // Clear text
+                                profileDiv.appendChild(img);
+                            }
+                            img.src = e.target.result;
+                            img.style.display = 'block';
+        
+                            // Save image to localStorage
+                            localStorage.setItem('profilePic', e.target.result);
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+        
+                // Load profile picture on page load
+                loadSavedProfilePic();
+            </script>
 
         </div>
         <div class="profiledisconts">
