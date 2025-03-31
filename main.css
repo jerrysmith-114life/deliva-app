@@ -1135,7 +1135,6 @@
         outline: none;
         border: 0;
         background: var(--color-info-light2);
-        border:no;
         box-shadow: var(--box-shadow4);
         display: flex;
         align-items: center;
