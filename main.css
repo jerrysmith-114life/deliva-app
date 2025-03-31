@@ -2817,13 +2817,10 @@
     background-color: var(--color-info-light);
     box-shadow: var(--box-shadow4);
     background-size: cover;
+    overflow: hidden;
 }
 .proimgcirdispl img{
-    min-height: 150px;
-    min-width: 150px;
-    max-height: 150px;
-    max-width: 150px;
-    border-radius: 50%;   
+    width: 100%;
 }
 
 .proheidiscontdet{
@@ -4684,3 +4681,14 @@ input:-internal-autofill-selected {
         height: 55vh;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
