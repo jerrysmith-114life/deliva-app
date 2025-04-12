@@ -818,19 +818,19 @@
     }
     .welcm h1{
         margin: 0;
-        font-size: 30px;
+        font-size: 25px;
         font-weight: 200;
         line-height: 40px;
         color: var(--color-dark);
 
     }
     .welcm h1 span{
-        font-size: 55px;
+        font-size: 38px;
     }
 
     .color-changing {
         font-weight: bold;
-        animation: colorChange 20s infinite linear;
+        animation: colorChange 5s infinite linear;
     }
 
     @keyframes colorChange {
@@ -862,6 +862,21 @@
             width: 100%;
         }
     }
+
+
+    .disp-text {
+        white-space: pre-line; /* Keep line breaks */
+        animation: blink 0.8s step-end infinite;
+      }
+  
+      @keyframes blink {
+        0%, 100% {
+          border-color: transparent;
+        }
+        50% {
+          border-color: transparent;
+        }
+      }
     
     /* Cursor blinking effect */
     @keyframes blink {
