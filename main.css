@@ -818,14 +818,14 @@
     }
     .welcm h1{
         margin: 0;
-        font-size: 25px;
+        font-size: 30px;
         font-weight: 200;
         line-height: 40px;
         color: var(--color-dark);
 
     }
     .welcm h1 span{
-        font-size: 38px;
+        font-size: 40px;
     }
 
     .color-changing {
