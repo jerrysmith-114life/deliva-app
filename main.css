@@ -1933,7 +1933,7 @@
       }
       .toppsfoodsadd{
         display: grid;
-            grid-template-columns: 30% 1fr;
+            grid-template-columns: 32% 1fr;
             width: 100%;
             grid-gap: 10px;
             padding: 5px;
@@ -1987,11 +1987,17 @@
         font-size: 11px;
       }
 
+      .portionfood{
+        display: flex ;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            gap: 5px;
+      }
 
     .cart-indicator {
         display: flex;
         align-items: center;
-        margin-bottom: 10px;
       }
       .progress-bar {
         flex: 1;
