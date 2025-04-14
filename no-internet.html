@@ -9,15 +9,21 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+    <div id="preloader">
+        <div class="spinner"></div>
+      </div>
     <div class="mainbody">
         <div class="conectnn">
             <div class="noconnect">
                 <div class="wifino"><span class="icon material-icons">wifi_off</span></div>
                 <span>No internet connection</span>
                 <p>Your connection is currently unavailable please check or try again</p>
-                <div class="tryag"><a href="">Try again</a></div>
+                <div class="tryag"><a href="" onclick="window.history.back(); return false;" >Back</a></div>
             </div>
         </div>
     </div>
+
+
+    <script src="main.js"></script>
 </body>
 </html>
