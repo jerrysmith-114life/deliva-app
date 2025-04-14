@@ -1960,6 +1960,12 @@
             transform: translateY(50px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
       }
+
+      .sidecart .toppsfoodsadd{
+        display: grid;
+        grid-template-columns: 32% 1fr !important;
+      }
+
       .toppsfoodsadd.visible {
         opacity: 1;
         transform: translateY(0);
@@ -4788,6 +4794,7 @@ input:-internal-autofill-selected {
 }
 
 @media (max-width: 380px)  and (max-height: 580px){
+   
     .toppsfoodsadd {
         display: grid;
         grid-template-columns: 29% 1fr;
@@ -4855,6 +4862,7 @@ input:-internal-autofill-selected {
         height: 55vh;
     }
 }
+
 
 
 
