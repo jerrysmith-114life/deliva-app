@@ -3126,6 +3126,7 @@ input:-internal-autofill-selected {
     align-items: center;
     width: 100%;
     box-sizing: border-box;
+    border: none;
 }
 .waletdis a{
     display: flex ;
@@ -3664,7 +3665,6 @@ input:-internal-autofill-selected {
 
 
 
-.serchresutsfoods.prodpgedis.vend 
 
 
 
