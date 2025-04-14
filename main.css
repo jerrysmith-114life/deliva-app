@@ -1935,7 +1935,7 @@
         display: grid;
             grid-template-columns: 30% 1fr;
             width: 100%;
-            grid-gap: 7px;
+            grid-gap: 10px;
             padding: 5px;
             height: fit-content;
             align-items: center;
@@ -1984,7 +1984,7 @@
 
       }
       .topname{
-        font-size: 13px;
+        font-size: 11px;
       }
 
 
@@ -2020,7 +2020,7 @@
       }
       .controls  button {
         padding: 7px 5px ;
-        font-size: 3.3vw;
+        font-size: 3vw;
         border: none;
         background-color: var(--color-primary);
         color: white;
