@@ -1,4 +1,76 @@
+ // Preload fonts, icons, images
+ const preloadAssets = () => {
+    const links = [
+      'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css',
+      'your-important-image.jpg', // add more if needed
+    ];
 
+    links.forEach(src => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = src.endsWith('.css') ? 'style' : 'image';
+      link.href = src;
+      document.head.appendChild(link);
+    });
+  };
+
+  // Add lazy loading to all images that don't have it
+  const makeImagesLazy = () => {
+    document.querySelectorAll('img:not([loading])').forEach(img => {
+      img.setAttribute('loading', 'lazy');
+    });
+  };
+
+  // Hide loader when page is fully ready
+  window.addEventListener('load', () => {
+    document.getElementById('preloader').style.display = 'none';
+    makeImagesLazy();
+  });
+
+  preloadAssets();
+
+
+
+   // Function to handle link clicks
+   const handleLinkClick = (event) => {
+    const targetUrl = event.target.href; // Get the target URL from the href attribute
+    console.log("Link clicked. Target URL:", targetUrl); // Debugging log
+
+    if (!navigator.onLine) {
+      // If offline, store the current page URL and redirect to "no-internet.html"
+      localStorage.setItem('previousPage', document.referrer);
+      console.log("Previous page stored:", document.referrer); // Debugging log
+      window.location.href = 'no-internet.html'; // Redirect to "no-internet.html"
+      event.preventDefault(); // Prevent the default navigation
+    }
+  };
+
+  // Function to handle network changes (online/offline)
+  const handleNetworkChange = () => {
+    if (navigator.onLine) {
+      // Network is back online, check if there is a stored previous page URL
+      const savedPreviousPage = localStorage.getItem('previousPage');
+      console.log("Network is back online. Saved previous page:", savedPreviousPage); // Debugging log
+      
+      if (savedPreviousPage) {
+        // Redirect to the previously stored page
+        window.location.href = savedPreviousPage;
+        localStorage.removeItem('previousPage'); // Clean up stored URL
+      } else {
+        // If there's no previous page stored, go back in history
+        window.history.back();
+      }
+    }
+  };
+
+  // Add event listeners to all anchor links
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', handleLinkClick);
+  });
+
+  // Listen for network changes
+  window.addEventListener('online', handleNetworkChange);
+  window.addEventListener('offline', handleNetworkChange);
 
 
 
@@ -405,6 +477,15 @@ orderHistoryContainer.addEventListener('click', () => {
 
 
 
+
+
+
+
+
+
+
+
+
 document.getElementById('getLocation').addEventListener('click', function(event) {
     event.preventDefault();
 
@@ -418,13 +499,5 @@ document.getElementById('getLocation').addEventListener('click', function(event)
         document.getElementById('locationOutput').innerText = "Error fetching location.";
     });
 });
-
-
-
-
-
-
-
-
 
 
