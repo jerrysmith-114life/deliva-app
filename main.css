@@ -1481,6 +1481,7 @@
         padding: 1px;
         gap: 7px;
         border-top: 2px solid var(--color-info-light2);
+        padding-top: 2%;
     }
     .venpoppg a p{
         color: var(--color-dark);
@@ -1516,6 +1517,7 @@
         height: 40vh;
         overflow-y: scroll;
         font-weight: 100;
+        padding-right: 10px;
     }
     .proodfoodheigh h3,h4,p{
         margin: 1%;
@@ -1534,11 +1536,22 @@
     .proodfoodheigh h3,h4{
         color: var(--color-dark);
     }
+
+    .proddespopfood{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .proddespopfood h3{
+        font-size: 13px;
+    }
     .delvtimkm {
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 0 2%;
+        padding-bottom: 2%;
         border-bottom: 2px solid var(--color-info-light2);
     }
 
@@ -1933,7 +1946,7 @@
       }
       .toppsfoodsadd{
         display: grid;
-            grid-template-columns: 32% 1fr;
+            grid-template-columns: 29% 1fr;
             width: 100%;
             grid-gap: 10px;
             padding: 5px;
@@ -1972,6 +1985,7 @@
       }
       .topsadfdd img{
         width: 100%;
+        height: 80px;
         border-radius: 3px;
       }
       .fdclosefd{
@@ -1980,7 +1994,7 @@
         justify-content: space-between;
       }
       .awaitorder .fdclosefd span{
-        font-size: 13px;
+        font-size: 11px;
 
       }
       .topname{
@@ -2337,9 +2351,10 @@
         .sidecart{
             height: 58vh;
           }
-          .proodfoodheigh{
+          .proodfoodheigh {
+            margin-top: 10%;
             height: 40vh;
-          }
+        }
           .crtshei{
             height: 60vh;
           }
@@ -3551,7 +3566,7 @@ input:-internal-autofill-selected {
         align-items: center;
         gap: 5px;
         justify-content: center;
-        font-size: 13px;
+        font-size: 12px;
     }
   
 
@@ -3784,12 +3799,12 @@ input:-internal-autofill-selected {
 }
 
 .proodfoodheigh::-webkit-scrollbar-track {
-    background:  var(--color-white);
+    background:  transparent;
     border-radius: 18px;
 }
 
 .proodfoodheigh::-webkit-scrollbar-thumb {
-    background: #333;
+    background:  transparent;
     border-radius: 18px;
     border: 2px solid var(--color-primary);
 }
@@ -3922,7 +3937,7 @@ input:-internal-autofill-selected {
 .notifics p{
     color: var(--color-dark);
     text-align: left;
-    font-size: 15px;
+    font-size: 12px;
 }
 .notdis{
     padding-right: 5px;
@@ -3930,7 +3945,7 @@ input:-internal-autofill-selected {
 
 .notifics p span{
     color: var(--color-primary);
-    font-size: 15px;
+    font-size: 12px;
 }
 .notifs{
     display: flex;
@@ -4052,6 +4067,10 @@ input:-internal-autofill-selected {
     }
     .confmord img {
         width: 85%;
+    }
+
+    .notificate {
+        grid-template-columns: 28% 1fr;
     }
    
 }
@@ -4771,10 +4790,10 @@ input:-internal-autofill-selected {
 @media (max-width: 380px)  and (max-height: 580px){
     .toppsfoodsadd {
         display: grid;
-        grid-template-columns: 32% 1fr;
+        grid-template-columns: 29% 1fr;
     }
     .topsadfdd {
-        width: 70px;
+        width: 80px;
         height: 80px;
     }
     .controls button {
@@ -4836,8 +4855,6 @@ input:-internal-autofill-selected {
         height: 55vh;
     }
 }
-
-
 
 
 
