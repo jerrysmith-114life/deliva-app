@@ -1191,8 +1191,12 @@
     }
     .flexlikes{
        position: absolute;
-       bottom: 11%;
+       bottom: 5%;
     }
+    .content-box .flexlikes{
+        position: absolute;
+        bottom: 11%;
+     }
     .flexlikes p{
        display: flex;
        align-items: center;
@@ -1213,6 +1217,7 @@
         font-family: "Tomorrow", serif;
         font-size: 12px;
         color: var(--color-info-dark);
+        gap: 12px;
     }
     .foodasel{
         background: var(--color-white);
@@ -1234,7 +1239,7 @@
         max-height: 140px;
         border-radius: 50%;
         position: relative;
-        top: -23%;
+        top: -29%;
         padding: 0px;
         outline: none;
         border: 0;
@@ -2411,7 +2416,7 @@
              grid-template-columns: 1fr 1fr;
              width: 100%;
              box-sizing: border-box;
-             margin-top: 5%;
+             margin-top: 7%;
              padding: 0 20px;
              padding-bottom: 10%;
              box-sizing: border-box;
@@ -2472,7 +2477,6 @@
         position: relative;
         width: 70%;
         font-size: 11px;
-        bottom: 20%;
     }
     .restt .flexlikes{
         position: relative;
