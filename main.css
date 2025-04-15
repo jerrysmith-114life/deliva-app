@@ -5,7 +5,7 @@
 
 :root{
     --main-background: #fbd950;
-    --yellowshade1: #e2c348    ;
+    --yellowshade1: #e2c348;
     --yellowshade2: #c9ae40;
     --yellowshade3: #b09838;
     --yellowshade4: #978230;
@@ -2748,7 +2748,7 @@
 }
 .serchresutsfoods.prodpgedis.vend{
     margin: 30% 0;
-    margin-top: 39%;
+    margin-top: 42%;
     margin-bottom: 0;
     height: 81vh;
     overflow-y: scroll;
@@ -4714,9 +4714,7 @@ input:-internal-autofill-selected {
         font-size: 26px;
     }
 
-  .mainbdy{
-
-}
+  
   .proodfoodheigh{
     height: 40vh;
   }
@@ -4848,9 +4846,7 @@ input:-internal-autofill-selected {
         height: 40vh;
         margin-bottom: 3%;
     }
-    .giftfprm {
-        
-    }
+  
     .crtshei {
         height: 53vh;
     }
