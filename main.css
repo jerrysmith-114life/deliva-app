@@ -5076,8 +5076,8 @@ input:-internal-autofill-selected {
 }
 
   .cylinder {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
     background: linear-gradient(145deg, var(--color-white),  var(--color-info-light2));
     border-radius: 50%;
     position: relative;
@@ -5130,7 +5130,7 @@ input:-internal-autofill-selected {
     height: 100%;
     background: linear-gradient(145deg, var(--color-white),  var(--color-info-light2));
     border-radius: 50%;
-    padding: 20px;
+    padding: 25px;
     box-sizing: border-box;
     color: #fff;
     text-align: center;
@@ -5360,7 +5360,7 @@ input:-internal-autofill-selected {
 
 .foradsdis{
     position: relative !important;
-    top: 5%;
+    top: 2%;
 }
 .tomorrowfontss{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
