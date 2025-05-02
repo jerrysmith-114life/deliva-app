@@ -120,7 +120,7 @@
           #preloader {
             position: fixed;
             z-index: 9999;
-            background: var(--color-load);
+            background: var(--color-darkwhite);
             width: 100%;
             height: 100%;
             display: flex;
@@ -4934,7 +4934,7 @@ input:-internal-autofill-selected {
    display: flex;
    align-items: flex-start;
    justify-content: space-between;
-   padding: 5px;
+   padding: 5px 10px;
   }
 
   .topgames i{
@@ -5076,8 +5076,8 @@ input:-internal-autofill-selected {
 }
 
   .cylinder {
-    width: 130px;
-    height: 130px;
+    width: 150px;
+    height: 150px;
     background: linear-gradient(145deg, var(--color-white),  var(--color-info-light2));
     border-radius: 50%;
     position: relative;
@@ -5230,7 +5230,8 @@ input:-internal-autofill-selected {
 .puzzle-piece {
     width: 100px;
     height: 100px;
-    background-size: 450px 450px;
+    background-size: 300px 300px;
+    background-repeat: no-repeat;
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     transition: background 0.3s ease;
@@ -5239,6 +5240,21 @@ input:-internal-autofill-selected {
     align-items: center;
     -webkit-tap-highlight-color: transparent;
 }
+
+
+.puzzle-piece:nth-child(1) { background-position: 0px 0px; }
+.puzzle-piece:nth-child(2) { background-position: -100px 0px; }
+.puzzle-piece:nth-child(3) { background-position: -200px 0px; }
+
+.puzzle-piece:nth-child(4) { background-position: 0px -100px; }
+.puzzle-piece:nth-child(5) { background-position: -100px -100px; }
+.puzzle-piece:nth-child(6) { background-position: -200px -100px; }
+
+.puzzle-piece:nth-child(7) { background-position: 0px -200px; }
+.puzzle-piece:nth-child(8) { background-position: -100px -200px; }
+.puzzle-piece:nth-child(9) { background-position: -200px -200px; }
+
+
 
 .empty {
     background: var(--nebula-blue);
@@ -5356,7 +5372,26 @@ input:-internal-autofill-selected {
         width: 100px;
         height: 100px;
     }
+    .cylinder {
+        width: 130px;
+        height: 130px;
+      }
 }
+@media (max-height: 670px) {
+    .cylinder {
+        width: 130px;
+        height: 130px;
+      }
+}
+
+
+@media (max-height: 610px) {
+    .cylinder {
+        width: 130px;
+        height: 130px;
+      }
+}
+
 
 .foradsdis{
     position: relative !important;
@@ -5420,7 +5455,7 @@ input:-internal-autofill-selected {
     margin-top: 0px;
     font-size: 25px;
     font-weight: bold;
-    color: var(--starfield-yellow);
+    color: var(--color-dark);
     transform: scale(1.1);
   }
 
@@ -5513,12 +5548,15 @@ input:-internal-autofill-selected {
   }
 
   #spin-button {
-    background:var(--starfield-yellow);
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow5);
+    border: none;
+    color: var(--color-dark);
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: 600;
     padding: 5% 30%;
     border-radius: 9px;
-    font-size: 18px;
-    font-weight: 600;
-    color: #010101;
     position: relative;
     z-index: 20 ;
   }
@@ -5561,11 +5599,12 @@ input:-internal-autofill-selected {
     box-shadow: var(--box-shadow5);
     border: none;
     color: var(--color-dark);
-    padding: 7% 16%;
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5% 10%;
     width: 50%;
     border-radius: 9px;
-    font-size: 18px; 
-    font-weight: 600;
     animation: boxShadow 2s infinite; 
     display: flex
 ;
