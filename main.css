@@ -5001,13 +5001,13 @@ input:-internal-autofill-selected {
   }
   .delgm{
     width: 100%;
-    padding: 7px;
+    padding: 5px;
     padding-left: 20px;
     box-sizing: border-box;
   }
   .delgm span{
     color: var(--color-dark);
-    font-size: 23px;
+    font-size: 20px;
     letter-spacing: 2px;
   }
 
@@ -5076,8 +5076,8 @@ input:-internal-autofill-selected {
 }
 
   .cylinder {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     background: linear-gradient(145deg, var(--color-white),  var(--color-info-light2));
     border-radius: 50%;
     position: relative;
