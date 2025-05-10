@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="main.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!-- Glide.js for the slider -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 </head>
 <body class="mainbdy srchhh">
     <div id="preloader">
@@ -24,8 +27,8 @@
                             <div class="venpopimg">
                                 <img src="img/mega.png" alt="">
                             </div>
-                            <div class="flrestdet ellipsisf">
-                                <p>Mega chicken</p>
+                            <div class="flrestdet ">
+                                <p class="ellipsisf">Mega chicken</p>
                                 <div class="flexlike">
                                     <p><i class="fa-solid fa-star fa-spin" style="color: #FFD43B;"></i>4.8 <p>2.4km</p></p>
                                   
@@ -97,7 +100,7 @@
          </div>
 
          <div class="sidebar right-sidebar">
-            <div class="rightsideflx"><button class="close-btn"><i class="fa-regular fa-circle-xmark fa-spin"></i></button><p>Swipe to delete <i class="fa-solid fa-trash fa-bounce"></i></p><span class="icon material-icons">shopping_cart</span></div>
+            <div class="rightsideflx shimmer"><button class="close-btn"><i class="fa-regular fa-circle-xmark fa-spin"></i></button><p>Swipe to delete <i class="fa-solid fa-trash fa-bounce"></i></p><i class="fa-solid fa-cart-shopping"></i></div>
 
             <div class="topsheigh crtshei sidecart">
 
@@ -255,7 +258,7 @@
         </div>
             <!----------------------------------------------------------SIDEBAR ENDS HERE ------------------------------------------------------------- -->                        
             <div class="slide-upgift" id="slideUpDivgift">
-                <div class="popdesfood"><i class="close-btncclsfoodgift  fa-regular fa-circle-xmark fa-spin"></i><i class="fa-solid fa-gift fa-bounce"></i></div>
+                <div class="popdesfood shimmer"><i class="close-btncclsfoodgift  fa-regular fa-circle-xmark fa-spin"></i><i class="fa-solid fa-gift fa-bounce"></i></div>
     
                 <div class="giftfprm">
                     <form action="">
@@ -384,13 +387,148 @@
             <!----------------------------------------------------------VENDOR FOODS ------------------------------------------------------------- -->                        
 
          <div class="serchresutsfoods prodpgedis vend">
+            <audio class="fridge-sound" preload="auto">
+                <source src="https://cdn.pixabay.com/audio/2022/02/23/audio_58a19c8317.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+              <!-- Fridge -->
+            <div class="fridge">
+                <button class="door-button drinksfridge">Drinks <i class="fa-solid fa-bottle-droplet fa-shake"></i></button>
+                <div class="inside">
+                    <div class="clspdv shimmer"><button class="close-button close-btnforpop" ><i class="close1 fa-regular fa-circle-xmark fa-spin"></i></button><a href="#"class=" carttrig" ><i class="fa-solid fa-bottle-droplet"></i></a></div>
+
+                <div class="shelves">
+                    <!-- Drinks -->
+                    <div class="drkbox"><span>Coke</span><div class="drink coke"><img src="img/Coke-removebg-preview.png" alt=""><span class="drinkprice">N500</span></div></div>
+                    <div class="drkbox"><span>Sprite</span><div class="drink sprite"><img src="img/sprite-removebg-preview.png" alt=""><span class="drinkprice">N500</span></div></div>
+                    <div class="drkbox"><span>Fanta</span><div class="drink fanta"><img src="img/fanta.png" alt=""><span class="drinkprice">N500</span></div></div>
+                    <div class="drkbox"><span>Pepsi</span><div class="drink pepsi"><img src="img/pepsi.png" alt=""><span class="drinkprice">N500</span></div></div>
+                    <div class="drkbox"><span>Water</span><div class="drink water"><img src="img/Water.png" alt=""><span class="drinkprice">N500</span></div></div>
+                    <div class="drkbox"><span>Coke</span><div class="drink coke"><img src="img/Coke-removebg-preview.png" alt=""><span class="drinkprice">N500</span></div></div>
+                    <div class="drkbox"><span>Fanta</span><div class="drink fanta"><img src="img/fanta.png" alt=""><span class="drinkprice">N500</span></div></div>
+                    <div class="drkbox"><span>Sprite</span><div class="drink sprite"><img src="img/sprite-removebg-preview.png" alt=""><span class="drinkprice">N500</span></div></div>
+                    <div class="drkbox"><span>Coke</span><div class="drink coke"><img src="img/Coke-removebg-preview.png" alt=""><span class="drinkprice">N500</span></div></div>
+                    <div class="drkbox"><span>Sprite</span><div class="drink sprite"><img src="img/sprite-removebg-preview.png" alt=""><span class="drinkprice">N500</span></div></div>
+                    <div class="drkbox"><span>Fanta</span><div class="drink fanta"><img src="img/fanta.png" alt=""><span class="drinkprice">N500</span></div></div>
+                    <div class="drkbox"><span>Pepsi</span><div class="drink pepsi"><img src="img/pepsi.png" alt=""><span class="drinkprice">N500</span></div></div>
+                    <div class="drkbox"><span>Water</span><div class="drink water"><img src="img/Water.png" alt=""><span class="drinkprice">N500</span></div></div>
+                    <div class="drkbox"><span>Coke</span><div class="drink coke"><img src="img/Coke-removebg-preview.png" alt=""><span class="drinkprice">N500</span></div></div>
+                    <div class="drkbox"><span>Fanta</span><div class="drink fanta"><img src="img/fanta.png" alt=""><span class="drinkprice">N500</span></div></div>
+                    <div class="drkbox"><span>Sprite</span><div class="drink sprite"><img src="img/sprite-removebg-preview.png" alt=""><span class="drinkprice">N500</span></div></div>
+                    <div class="drkbox"><span>Coke</span><div class="drink coke"><img src="img/Coke-removebg-preview.png" alt=""><span class="drinkprice">N500</span></div></div>
+                    <div class="drkbox"><span>Sprite</span><div class="drink sprite"><img src="img/sprite-removebg-preview.png" alt=""><span class="drinkprice">N500</span></div></div>
+                    <div class="drkbox"><span>Fanta</span><div class="drink fanta"><img src="img/fanta.png" alt=""><span class="drinkprice">N500</span></div></div>
+                    <div class="drkbox"><span>Pepsi</span><div class="drink pepsi"><img src="img/pepsi.png" alt=""><span class="drinkprice">N500</span></div></div>
+                    <div class="drkbox"><span>Water</span><div class="drink water"><img src="img/Water.png" alt=""><span class="drinkprice">N500</span></div></div>
+                    <div class="drkbox"><span>Coke</span><div class="drink coke"><img src="img/Coke-removebg-preview.png" alt=""><span class="drinkprice">N500</span></div></div>
+                    <div class="drkbox"><span>Fanta</span><div class="drink fanta"><img src="img/fanta.png" alt=""><span class="drinkprice">N500</span></div></div>
+                    <div class="drkbox"><span>Sprite</span><div class="drink sprite"><img src="img/sprite-removebg-preview.png" alt=""><span class="drinkprice">N500</span></div></div>
+
+                    <!-- Steam inside fridge -->
+                    <!-- <div class="steam-container">
+                    <div class="steam"></div>
+                    <div class="steam"></div>
+                    <div class="steam"></div>
+                    <div class="steam"></div>
+                    <div class="steam"></div>
+                    <div class="steam"></div>
+                    <div class="steam"></div>
+                    <div class="steam"></div>
+                    <div class="steam"></div>
+                    <div class="steam"></div>
+                    <div class="steam"></div>
+                    <div class="steam"></div>
+                    <div class="steam"></div>
+                    <div class="steam"></div>
+                    <div class="steam"></div>
+                    <div class="steam"></div>
+                    <div class="steam"></div>
+                    <div class="steam"></div>
+                    <div class="steam"></div>
+                    <div class="steam"></div>
+                    <div class="steam"></div>
+                    </div> -->
+                </div>
+                </div>
+            </div>
+            <div class="foodcourt">
+                <!-- SLIDER -->
+                <div class="glide">
+                    <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        <li class="glide__slide">
+                        <img src="img/friedrice.jpg" alt="Fried rice">
+                        <div class="foodname">Fried rice</div>
+                        </li>
+                        <li class="glide__slide">
+                        <img src="img/jollof.jpg" alt="Jollof">
+                        <div class="foodname">Jollof rice</div>
+                        </li>
+                        <li class="glide__slide">
+                        <img src="img/white rice.jpg" alt="White rice and stew">
+                        <div class="foodname">White rice</div>
+                        </li>
+                        <li class="glide__slide">
+                        <img src="img/vegetable.jpg" alt="Vegetable soup">
+                        <div class="foodname">Vegetable soup</div>
+                        </li>
+                        <li class="glide__slide">
+                        <img src="img/egusi.jpg" alt="Egusi">
+                        <div class="foodname">Egusi soup</div>
+                        </li>
+                        <li class="glide__slide">
+                        <img src="img/eba.jpg" alt="Eba">
+                        <div class="foodname">Eba</div>
+                        </li>
+                        <li class="glide__slide">
+                        <img src="img/fufu.jpg" alt="Fufu">
+                        <div class="foodname">Fufu</div>
+                        </li>
+                     
+
+                    </ul>
+                    </div>
+                </div>
+                
+                <!-- DISPLAY SECTION -->
+                <div class="food-display">
+                    <div class="clspdv shimmer"><button class="close-btnforpop" id="close-btnforpop"><i class="close1 fa-regular fa-circle-xmark fa-spin"></i></button><a href="#"class=" carttrig" ><i class="fa-solid fa-cart-shopping fa-shake"></i></a></div>
+                    <h2 class="food-name" style="display: none;">Food Name</h2>
+                    <div id="total-price"> ₦0</div>
+                    <div class="plate-container"></div>
+                    <div class="foodaction">
+                        <a href="#" class="add-plate">Add Plate</a>
+                        <a href="#" class="unique-link" data-popup="popup-2">Order now</a>
+                    </div>
+                </div>
+                
+                <!-- Custom Pop-up for max food to plate-->
+                <div class="popupfornofood" id="popupfornofood">
+                    <div class="popupfornofood-text">You can't add more than 5 portions to a plate! Upgrade to premium to add more plates</div>
+                    <div class="maxbotup">
+                        <a href="#" id="close-popupfornofood">Close</a>
+                        <a href="">Upgrade</a>
+                    </div>
+                </div>
+            </div>
+                <!-- Popup for max plates reached -->
+                <div id="popupfornoplate" class="popupfornofood">
+                    <div class="popup-content">
+                    <p>You can only add up to 4 plates. Upgrade to premium to add more plates</p>
+                    <div class="maxbotup">
+                        <a href="#" id="close-popupfornoplate">Close</a>
+                        <a href="">Upgrade</a>
+                    </div>
+                    </div>
+                </div>    
 
             <div class="sercfscnt">
+
                 <div class="fooditemss serchfoodspg">
                     <a href=""class="trigger" data-target="popupitemsfod1">
                         <div class="foodasel">
                             <div class="foodimgdes"></div>
-                            <div class="fooddessel"><p class="ellipsise">Veggie tomato mix </p><br><span class="pricsfood">N1,900</span></div>
+                            <div class="fooddessel"><p class="ellipsise">Veggie tomato mix</p><br><span class="pricsfood">N1,900</span></div>
                             <div class="venddisp"><div class="venimg"><img src="img/mega.png" alt=""></div><p class="ellipsise">Chicken Republic</p></div>
                         </div>
                     </a>
@@ -450,7 +588,7 @@
             </div>
             <div id="popupitemsfod1" class="popupitemsfod">
                 <div class="popupitemsfod-content">
-                    <div class="popdesfood"><i class="close1 fa-regular fa-circle-xmark fa-spin"></i><a href="#"class=" carttrig" ><span class="icon material-icons">shopping_cart</span></a></div>
+                    <div class="popdesfood shimmer"><i class="close1 fa-regular fa-circle-xmark fa-spin"></i><a href="#"class=" close1" ><i class="fa-solid fa-cart-shopping fa-shake"></i></a></div>
                     <div class="prodimgpop">
                         <div class="foodpopcir"><img src="img/foodim.webp" alt=""></div>
                     </div>
@@ -474,55 +612,7 @@
                         <a href="" class="unique-link" data-popup="popup-2"><span class="">Order now</span></a>
                     </div>
 
-                    <div class="unique-popup" id="popup-2">
-                        <div class="popup-content">
-                            <div class="clbal"><button class="closeseldtcrd-popup"><i class=" fa-regular fa-circle-xmark fa-spin"></i></button></div>
-                            <div class="paynt">
-                                <div class="paycrd"><p>Pay online</p><a href="" class="unique-link" data-popup="popup-5"><img src="img/card (1).png" alt=""></a></div>
-                                <div class="paycrd"><div class="walcarddis"><p>Pay with Wallet</p> <p>N 50,000</p></div><a href="" class="unique-link" data-popup="popup-6"><img src="img/card (2).png" alt=""></a></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="unique-popup" id="popup-5">
-                        <div class="popup-content">
-                            <div class="clbal"><button class="closeseldtcrd-popup"><i class=" fa-regular fa-circle-xmark fa-spin"></i></button><p>Online payment</p></div>
-                            <div class="paynt">
-                                <div class="paycrd"><p>Delivery Order</p><a href="" ><img src="img/ordertype (1).png" alt=""></a></div>
-                                <div class="paycrd"><div class="walcarddis"><p>In-restaurant order</p> </div><a href="" class="unique-link" data-popup="popup-7"><img src="img/ordertype (2).png" alt=""></a></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="unique-popup" id="popup-6">
-                        <div class="popup-content">
-                            <div class="clbal"><button class="closeseldtcrd-popup"><i class=" fa-regular fa-circle-xmark fa-spin"></i></button><p>Wallet payment</p></div>
-                            <div class="paynt">
-                                <div class="paycrd"><p>Delivery order</p><a href="" ><img src="img/ordertype (1).png" alt=""></a></div>
-                                <div class="paycrd"><div class="walcarddis"><p>In-restaurant order</p></div><a href="" class="unique-link" data-popup="popup-8"><img src="img/ordertype (2).png" alt=""></a></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="unique-popup" id="popup-7">
-                        <div class="popup-content">
-                            <div class="clbal"><button class="closeseldtcrd-popup"><i class=" fa-regular fa-circle-xmark fa-spin"></i></button><p>Online payment</p></div>
-                            <div class="paynt">
-                                <div class="paycrd"><p>Eat-in</p><a href="" ><img src="img/eattype (1).png" alt=""></a></div>
-                                <div class="paycrd"><div class="walcarddis"><p>Take-out</p></div><a href=""><img src="img/eattype (2).png" alt=""></a></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="unique-popup" id="popup-8">
-                        <div class="popup-content">
-                            <div class="clbal"><button class="closeseldtcrd-popup"><i class=" fa-regular fa-circle-xmark fa-spin"></i></button><p>Wallet payment</p></div>
-                            <div class="paynt">
-                                <div class="paycrd"><p>Eat-in</p><a href="" ><img src="img/eattype (1).png" alt=""></a></div>
-                                <div class="paycrd"><div class="walcarddis"><p>Take-out</p></div><a href=""><img src="img/eattype (2).png" alt=""></a></div>
-                            </div>
-                        </div>
-                    </div>
+                    
 
                     <div class="slide-up" id="slideUpDiv">
                         <div class="popdesfood"><i class="close-btncclsfood  fa-regular fa-circle-xmark fa-spin"></i><span>Toppings</span></div>
@@ -629,6 +719,55 @@
                     </div>
                 </div>
             </div>
+            <div class="unique-popup" id="popup-2">
+                <div class="popup-content">
+                    <div class="clbal"><button class="closeseldtcrd-popup"><i class=" fa-regular fa-circle-xmark fa-spin"></i></button></div>
+                    <div class="paynt">
+                        <div class="paycrd"><p>Pay online</p><a href="" class="unique-link" data-popup="popup-5"><img src="img/card (1).png" alt=""></a></div>
+                        <div class="paycrd"><div class="walcarddis"><p>Pay with Wallet</p> <p>N 50,000</p></div><a href="" class="unique-link" data-popup="popup-6"><img src="img/card (2).png" alt=""></a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="unique-popup" id="popup-5">
+                <div class="popup-content">
+                    <div class="clbal"><button class="closeseldtcrd-popup"><i class=" fa-regular fa-circle-xmark fa-spin"></i></button><p>Online payment</p></div>
+                    <div class="paynt">
+                        <div class="paycrd"><p>Delivery Order</p><a href="" ><img src="img/ordertype (1).png" alt=""></a></div>
+                        <div class="paycrd"><div class="walcarddis"><p>In-restaurant order</p> </div><a href="" class="unique-link" data-popup="popup-7"><img src="img/ordertype (2).png" alt=""></a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="unique-popup" id="popup-6">
+                <div class="popup-content">
+                    <div class="clbal"><button class="closeseldtcrd-popup"><i class=" fa-regular fa-circle-xmark fa-spin"></i></button><p>Wallet payment</p></div>
+                    <div class="paynt">
+                        <div class="paycrd"><p>Delivery order</p><a href="" ><img src="img/ordertype (1).png" alt=""></a></div>
+                        <div class="paycrd"><div class="walcarddis"><p>In-restaurant order</p></div><a href="" class="unique-link" data-popup="popup-8"><img src="img/ordertype (2).png" alt=""></a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="unique-popup" id="popup-7">
+                <div class="popup-content">
+                    <div class="clbal"><button class="closeseldtcrd-popup"><i class=" fa-regular fa-circle-xmark fa-spin"></i></button><p>Online payment</p></div>
+                    <div class="paynt">
+                        <div class="paycrd"><p>Eat-in</p><a href="" ><img src="img/eattype (1).png" alt=""></a></div>
+                        <div class="paycrd"><div class="walcarddis"><p>Take-out</p></div><a href=""><img src="img/eattype (2).png" alt=""></a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="unique-popup" id="popup-8">
+                <div class="popup-content">
+                    <div class="clbal"><button class="closeseldtcrd-popup"><i class=" fa-regular fa-circle-xmark fa-spin"></i></button><p>Wallet payment</p></div>
+                    <div class="paynt">
+                        <div class="paycrd"><p>Eat-in</p><a href="" ><img src="img/eattype (1).png" alt=""></a></div>
+                        <div class="paycrd"><div class="walcarddis"><p>Take-out</p></div><a href=""><img src="img/eattype (2).png" alt=""></a></div>
+                    </div>
+                </div>
+            </div>
 
             
             <!----------------------------------------------------------VENDOR FOODS ENDS HERE ------------------------------------------------------------- -->                        
@@ -639,6 +778,7 @@
 
     </div>
 
+    <script src="foodcourt.js"></script>
 <script src="main.js"></script>
 <script src="theme.js"></script>
 </body>
