@@ -3039,6 +3039,7 @@
     justify-content: center;
     gap: 8px;
     display: none; /* start hidden */
+    height: 150px;
   }
   
   .selected-drink {
@@ -3098,7 +3099,7 @@
     transition: background-color 0.3s ease;
     width: 50%;
     position: absolute;
-    bottom: 1%;
+    bottom: 5%;
   }
   
   .add-to-plate:hover {
@@ -3274,7 +3275,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 100;
+    font-weight: 500;
     display: inline-block;
     max-width: 35px; /* Adjust the width as needed */
     white-space: nowrap;
