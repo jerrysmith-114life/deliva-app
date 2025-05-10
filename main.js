@@ -29,6 +29,105 @@
 
   preloadAssets();
 
+  document.addEventListener('DOMContentLoaded', () => {
+    const contents = document.querySelectorAll('.contentact');
+    const loader = document.getElementById('loader');
+    const backButtons = document.querySelectorAll('.backbutnforconts');
+    const tabs = document.querySelectorAll('.tab');
+    let historyStack = JSON.parse(localStorage.getItem('historyStack')) || [];
+
+    // Restore last active content
+    const lastcontentactId = localStorage.getItem('contentact');
+
+    if (lastcontentactId) {
+        const lastcontentact = document.getElementById(lastcontentactId);
+        if (lastcontentact) {
+            contents.forEach(content => content.classList.remove('active'));
+            lastcontentact.classList.add('active');
+
+            // Restore tab state
+            tabs.forEach(tab => {
+                tab.classList.toggle('active', tab.getAttribute('data-target') === lastcontentactId);
+            });
+        }
+    } else {
+        contents[0]?.classList.add('active');
+        tabs[0]?.classList.add('active');
+    }
+
+    // Tab click handler
+    tabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = tab.getAttribute('data-target');
+            const currentActive = document.querySelector('.contentact.active');
+
+            if (currentActive) {
+                historyStack.push(currentActive.id);
+            }
+
+            localStorage.setItem('contentact', targetId);
+            localStorage.setItem('historyStack', JSON.stringify(historyStack));
+
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            loader.style.display = 'block';
+
+            contents.forEach(content => {
+                if (content.classList.contains('active')) {
+                    content.classList.remove('active');
+                    content.classList.add('exit');
+                    setTimeout(() => content.classList.remove('exit'), 700);
+                }
+            });
+
+            setTimeout(() => {
+                loader.style.display = 'none';
+                const targetContent = document.getElementById(targetId);
+                if (targetContent) {
+                    contents.forEach(content => content.classList.remove('active'));
+                    targetContent.classList.add('active');
+                }
+            }, 1000);
+        });
+    });
+
+    // Back button functionality with loader
+    backButtons.forEach(backButton => {
+        backButton.addEventListener('click', () => {
+            if (historyStack.length > 0) {
+                const previousContentId = historyStack.pop();
+                localStorage.setItem('historyStack', JSON.stringify(historyStack));
+
+                const previousContent = document.getElementById(previousContentId);
+                if (previousContent) {
+                    loader.style.display = 'block';
+
+                    contents.forEach(content => {
+                        if (content.classList.contains('active')) {
+                            content.classList.remove('active');
+                            content.classList.add('exit');
+                            setTimeout(() => content.classList.remove('exit'), 700);
+                        }
+                    });
+
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                        contents.forEach(content => content.classList.remove('active'));
+                        previousContent.classList.add('active');
+                        localStorage.setItem('contentact', previousContent.id);
+
+                        tabs.forEach(tab => {
+                            tab.classList.toggle('active', tab.getAttribute('data-target') === previousContent.id);
+                        });
+                    }, 1000);
+                }
+            }
+        });
+    });
+});
+
 
 
    // Function to handle link clicks
@@ -75,44 +174,49 @@
 
 
 
-const leftLink = document.querySelector('.left-link');
-const rightLink = document.querySelector('.right-link');
-const leftSidebar = document.querySelector('.left-sidebar');
-const rightSidebar = document.querySelector('.right-sidebar');
-const overlay = document.querySelector('.overlay');
-const closeButtons = document.querySelectorAll('.close-btn');
-
-// Function to open a specific sidebar
-function openSidebar(sidebar) {
-    sidebar.classList.add('active');
-    overlay.classList.add('active');
-}
-
-// Function to close all sidebars
-function closeSidebars() {
-    leftSidebar.classList.remove('active');
-    rightSidebar.classList.remove('active');
-    overlay.classList.remove('active');
-}
-
-// Event listeners for the sidebar links
-leftLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    openSidebar(leftSidebar);
-});
-
-rightLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    openSidebar(rightSidebar);
-});
-
-// Event listeners for the close buttons
-closeButtons.forEach(button => {
-    button.addEventListener('click', closeSidebars);
-});
-
-// Event listener for the overlay
-overlay.addEventListener('click', closeSidebars);
+  const leftLinks = document.querySelectorAll('.left-link');
+  const rightLinks = document.querySelectorAll('.right-link');
+  const leftSidebars = document.querySelectorAll('.left-sidebar');
+  const rightSidebars = document.querySelectorAll('.right-sidebar');
+  const overlays = document.querySelectorAll('.overlay');
+  const closeButtons = document.querySelectorAll('.close-btn');
+  
+  // Open left sidebars by index
+  leftLinks.forEach((link, index) => {
+      link.addEventListener('click', (e) => {
+          e.preventDefault();
+          leftSidebars[index]?.classList.add('active');
+          overlays[index]?.classList.add('active');
+      });
+  });
+  
+  // Open right sidebars by index
+  rightLinks.forEach((link, index) => {
+      link.addEventListener('click', (e) => {
+          e.preventDefault();
+          rightSidebars[index]?.classList.add('active');
+          overlays[index]?.classList.add('active');
+      });
+  });
+  
+  // Close buttons close the nearest active sidebar and its overlay
+  closeButtons.forEach(button => {
+      button.addEventListener('click', () => {
+          document.querySelectorAll('.left-sidebar.active, .right-sidebar.active, .overlay.active').forEach(el => {
+              el.classList.remove('active');
+          });
+      });
+  });
+  
+  // Clicking overlay also closes associated sidebars
+  overlays.forEach((overlay, index) => {
+      overlay.addEventListener('click', () => {
+          leftSidebars[index]?.classList.remove('active');
+          rightSidebars[index]?.classList.remove('active');
+          overlay.classList.remove('active');
+      });
+  });
+  
 
 
 
@@ -137,48 +241,43 @@ document.querySelectorAll('.link').forEach(link => {
     });
 });
 
-
 document.addEventListener('DOMContentLoaded', () => {
-const triggers = document.querySelectorAll('.trigger');
-const popupitemsfods = document.querySelectorAll('.popupitemsfod');
-const overlayss = document.querySelector('.overlayss');
+    const triggers = document.querySelectorAll('.trigger');
+    const popupitemsfods = document.querySelectorAll('.popupitemsfod');
+    const overlayss = document.querySelector('.overlayss');
 
-// Open the targeted popup
-triggers.forEach(trigger => {
-trigger.addEventListener('click', (e) => {
-    e.preventDefault();
-    const targetId = trigger.getAttribute('data-target');
-    const targetPopupitemsfod = document.getElementById(targetId);
-    
-    if (targetPopupitemsfod) {
-        targetPopupitemsfod.classList.add('active');
-        overlayss.classList.add('active');
-    }
-});
-});
+    // Open the targeted popup
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = trigger.getAttribute('data-target');
+            const targetPopup = document.getElementById(targetId);
 
-// Close the popup when clicking on the overlay or a close button
-document.addEventListener('click', (e) => {
-if (e.target.classList.contains('overlayss') || e.target.classList.contains('close')) {
-    popupitemsfods.forEach(popupitemsfod => popupitemsfod.classList.remove('active'));
-    overlayss.classList.remove('active');
-}
-});
+            if (targetPopup) {
+                targetPopup.classList.add('active');
+                overlayss.classList.add('active');
+            }
+        });
+    });
 
-// Add individual close behavior for "close1" and "close2"
-const closeButtons = document.querySelectorAll('.close1, .close2');
-
-closeButtons.forEach(closeButton => {
-closeButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    const popupToClose = closeButton.closest('.popupitemsfod'); // Find the parent popup to close
-    if (popupToClose) {
-        popupToClose.classList.remove('active');
+    // Close all popups on overlay click
+    overlayss.addEventListener('click', () => {
+        popupitemsfods.forEach(popup => popup.classList.remove('active'));
         overlayss.classList.remove('active');
-    }
+    });
+
+    // Close buttons inside each popup
+    const closeButtons = document.querySelectorAll('.close, .close1, .close2');
+    closeButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const popup = button.closest('.popupitemsfod');
+            if (popup) popup.classList.remove('active');
+            overlayss.classList.remove('active');
+        });
+    });
 });
-});
-});
+
 
 
 
@@ -368,36 +467,50 @@ document.addEventListener('click', function(event) {
 });
 
 
-      // Select all links and pop-ups
-      const links = document.querySelectorAll('.unique-link');
-      const popups = document.querySelectorAll('.unique-popup');
+document.addEventListener('DOMContentLoaded', () => {
+    // Select all links and popups
+    const links = document.querySelectorAll('.unique-link');
+    const popups = document.querySelectorAll('.unique-popup');
 
-      // Show the corresponding pop-up when a link is clicked
-      links.forEach(link => {
-          link.addEventListener('click', function(event) {
-              event.preventDefault();
-              const popupId = this.getAttribute('data-popup'); // Get associated pop-up ID
-              const popup = document.getElementById(popupId);
-              if (popup) {
-                  popup.style.display = 'block';
-                  setTimeout(() => {
-                      popup.classList.add('popup-visible');
-                  }, 10);
-              }
-          });
+    // Open the matching popup
+    links.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const popupId = this.getAttribute('data-popup');
+            const popup = document.getElementById(popupId);
+            if (popup) {
+                popup.style.display = 'block';
+                requestAnimationFrame(() => {
+                    popup.classList.add('popup-visible');
+                });
+            }
+        });
+    });
+
+    // Close popup when close button is clicked
+    popups.forEach(popup => {
+        const closeButton = popup.querySelector('.closeseldtcrd-popup');
+        if (closeButton) {
+            closeButton.addEventListener('click', () => {
+                popup.classList.remove('popup-visible');
+                setTimeout(() => {
+                    popup.style.display = 'none';
+                }, 300); // match transition
+            });
+        }
+    });
+});
+
+
+
+
+
+    // This will add the event to all elements with the class 'venddisp'
+    document.querySelectorAll(".venddisp").forEach(function(element) {
+        element.addEventListener("click", function() {
+          window.location.href = "vendor.html"; // change to your target file
+        });
       });
-
-      // closeseldtcrd the pop-up when the closeseldtcrd button is clicked
-      popups.forEach(popup => {
-          const closeseldtcrdButton = popup.querySelector('.closeseldtcrd-popup');
-          closeseldtcrdButton.addEventListener('click', function() {
-              popup.classList.remove('popup-visible'); // Start fade-out
-              setTimeout(() => {
-                  popup.style.display = 'none'; // Hide completely after fade-out
-              }, 300); // Match the transition duration
-          });
-      });
-
 
 
 
@@ -518,3 +631,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
     elements.forEach(el => observer.observe(el));
   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
